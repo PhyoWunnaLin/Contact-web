@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
 import Path from './routes/Path'
 
 const App = () => {
@@ -11,4 +10,3 @@ const App = () => {
 }
 
 export default App
-
