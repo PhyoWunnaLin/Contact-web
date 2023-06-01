@@ -16,7 +16,7 @@ export const authSlice = createSlice({
         Cookies.set("user", JSON.stringify(state.user));
       Cookies.set("token", state.token);
     },
-    removeUserToCookie: (state) => {
+    removeUserFromCookie: (state) => {
       state.user = null;
       state.token = null;
       Cookies.remove("user");
@@ -25,5 +25,5 @@ export const authSlice = createSlice({
   },
 });
 
-export const { addUserToCookie,removeUserToCookie } = authSlice.actions;
+export const { addUserToCookie,removeUserFromCookie } = authSlice.actions;
 export default authSlice.reducer;

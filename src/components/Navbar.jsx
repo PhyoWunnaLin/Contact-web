@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className=" sm:block hidden">
             <div className=" lg:w-[600px] md:w-[400px] sm:w-[250px] h-[50px] rounded-lg border bg-gray-100 flex gap-3 items-center">
               <div className="ml-3 bg-gray-200 rounded-full p-2 duration-500">
-                <AiOutlineSearch className=" text-gray-600 text-[25px]"></AiOutlineSearch>
+                <AiOutlineSearch className=" text-gray-600 text-[20px]"></AiOutlineSearch>
               </div>
               <input
                 type="text"
