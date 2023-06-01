@@ -32,7 +32,7 @@ const Navbar = () => {
             searchOnclick ? "hidden sm:flex" : "block"
           }  flex items-center gap-4`}
         >
-          <div className=" hover:bg-sky-50 rounded-full p-2 duration-500">
+          <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
             <RxHamburgerMenu
               onClick={() => setOpen(!open)}
               className="text-2xl cursor-pointer text-gray-600"
@@ -76,10 +76,10 @@ const Navbar = () => {
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               ></AiOutlineSearch>
             )}
-            <div className=" hover:bg-sky-50 rounded-full p-3 duration-500">
+            <div className=" hover:bg-gray-200 rounded-full p-3 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
             </div>
-            <div className=" hover:bg-sky-50 rounded-full p-3 duration-500">
+            <div className=" hover:bg-gray-200 rounded-full p-3 duration-500">
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
             <div className="sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
