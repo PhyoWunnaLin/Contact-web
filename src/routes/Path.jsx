@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 
 import CreateContact from "../components/CreateContact";
+import RouteGuard from "../components/RouteGuard";
 const Path = () => {
   return (
     <div>

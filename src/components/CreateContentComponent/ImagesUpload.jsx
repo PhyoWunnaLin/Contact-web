@@ -5,6 +5,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 
 import ModalContents from "./ModalContents";
+import { Link } from "react-router-dom";
 
 const ImagesUpload = () => {
   const [profileImage, setProfileImages] = useState("");
@@ -21,7 +22,9 @@ const ImagesUpload = () => {
         <ModalContents close={close} />
       </Modal>
       <div className=" flex  flex-col">
-        <GrFormClose className=" text-2xl " />
+        <Link to="/">
+          <GrFormClose className=" text-2xl " />
+        </Link>
         <p className=" lg:hidden md:hidden ">Edit Contact</p>
       </div>
       <div className=" ">
