@@ -5,14 +5,38 @@ import { MdOutlineEdit } from 'react-icons/md';
 import { CiImport, CiExport } from 'react-icons/ci';
 
 const ContactTable = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(null);
 
-    const handleMouseEnter = () => {
-        setIsHovered(true);
+    const contacts = [
+        {
+          id: 1,
+          name: 'Khine Zin Thin',
+          email: 'khine@gmail.com',
+          phoneNumber: '1234567890',
+          address: 'ho ner d ner',
+        },
+        {
+            id: 2,
+            name: 'Khine Zin Thin',
+            email: 'khine@gmail.com',
+            phoneNumber: '1234567890',
+            address: 'ho ner d ner',
+          },
+          {
+            id: 3,
+            name: 'Khine Zin Thin',
+            email: 'khine@gmail.com',
+            phoneNumber: '1234567890',
+            address: 'ho ner d ner',
+          },
+      ];
+
+    const handleMouseEnter = (index) => {
+        setIsHovered(index);
     };
 
     const handleMouseLeave = () => {
-        setIsHovered(false);
+        setIsHovered(null);
     };
 
   return (
@@ -54,22 +78,24 @@ const ContactTable = () => {
                         </td>
                     </tr>
 
-                    <tr className={` border-b-2 border-b-white ${isHovered ? 'bg-[#90cdf49f]' : ''}  hover:backdrop:blur-sm duration-500`} onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}>
+                    {contacts.map((contact,index)=>{
+                        return(
+                            <tr key={contact.id} className={` border-b-2 border-b-white ${isHovered === index? 'bg-[#90cdf49f]' : ''}  hover:backdrop:blur-sm duration-500`} onMouseEnter={()=>handleMouseEnter(index)}
+                            onMouseLeave={handleMouseLeave}>
                         <td className=' flex flex-row items-center text-left px-10 py-4  text-sm font-semibold tracking-wide'>
                             <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" className='w-[45px] h-[45px] rounded-full' alt="" />
-                            <span className=' text-gray-600 pl-3'>Khine Zin Thin</span>
+                            <span className=' text-gray-600 pl-3'>{contact.name}</span>
                         </td>
                         <td className=' text-left px-10  py-4  text-sm font-semibold tracking-wide'>
-                            <span className=' text-gray-600'>khine@gmail.com</span>
+                            <span className=' text-gray-600'>{contact.email}</span>
                         </td>
                         <td className=' text-left px-10 py-4  text-sm font-semibold tracking-wide'>
-                            <span className=' text-gray-600 '>0978798898999</span>
+                            <span className=' text-gray-600 '>{contact.phone}</span>
                         </td>
                         <td className=' text-left px-10 py-4  text-sm font-semibold tracking-wide'>
-                            <span className=' text-gray-600'>Ho Ner D Ner</span>
+                            <span className=' text-gray-600'>{contact.address}</span>
                         </td>
-                        <td className={` ${isHovered ? 'block' : 'invisible'}  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}>
+                        <td className={` ${isHovered === index? 'block' : 'invisible'}  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}>
                             <span>
                             <AiOutlineStar className=''></AiOutlineStar>
                             </span>
@@ -79,7 +105,8 @@ const ContactTable = () => {
                             <span className=''>:</span>
                         </td>
                     </tr>
-                    
+                        )
+                    })}
                 </tbody>
             </table>
             </div>
