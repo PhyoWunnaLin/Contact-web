@@ -7,7 +7,6 @@ import { IoMdTrash } from "react-icons/io";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsFillSendPlusFill } from "react-icons/bs";
 import ContactTable from "./ContactTable";
-import Create from "./Create";
 
 const Sidebar = ({open}) => {
   const [active, setActive] = useState("contacts");
@@ -39,10 +38,7 @@ const Sidebar = ({open}) => {
             Contact
           </p>
           <p
-            onClick={() => {
-              setActive("frequent");
-              setShow(<Create/>)
-            }}
+            onClick={() => setActive("frequent")}
             className={` hover:bg-sky-200 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
               active == "frequent"
                 ? " text-sky-700 text-[16px] bg-sky-200"
