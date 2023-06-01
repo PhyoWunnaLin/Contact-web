@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Dashboard from "../pages/Dashboard";
 
 const Path = () => {
   return (
     <div>
-      
+      <Routes>
+        <Route path="/" element={<Dashboard/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default Path
+export default Path;
