@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={` ${
+          className={`flex ${
             searchOnclick ? "hidden sm:flex" : "block"
           }  flex items-center gap-4`}
         >
@@ -57,7 +57,7 @@ const Navbar = () => {
 
         <div>
           <div className=" sm:block hidden">
-            <div className=" lg:w-[600px] md:w-[400px] sm:w-[250px] h-[50px] rounded-lg border bg-gray-100 flex gap-3 items-center">
+            <div className=" lg:w-[550px] md:w-[325px] sm:w-[208px] h-[50px] rounded-lg border bg-gray-100 flex gap-3 items-center">
               <div className="ml-3 bg-gray-200 rounded-full p-2 duration-500">
                 <AiOutlineSearch className=" text-gray-600 text-[20px]"></AiOutlineSearch>
               </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <div className=" flex sm:gap-5 items-center">
+          <div className=" flex lg:gap-5 md:gap-2 sm:gap-1 gap-0 items-center">
             {searchOnclick ? (
               <RxCross2
                 onClick={() => setSearchOnClick(!searchOnclick)}
