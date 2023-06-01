@@ -78,6 +78,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none bg-opacity-5"
+              required
             />
             <input
               type="text"
@@ -85,6 +86,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              required
             />
             <h2 className=" text-xs font-semibold ms-auto cursor-pointer">
               Forget password?
@@ -143,14 +145,6 @@ const Login = () => {
               </div>
             </div>
           </div>
-          {/* <div class="group flex relative">
-        <span className="bg-red-400 text-white px-2 py-1">Button</span>
-        <span
-          className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 
-    -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
-          facebook
-        </span>
-      </div> */}
         </div>
       </form>
     </div>
