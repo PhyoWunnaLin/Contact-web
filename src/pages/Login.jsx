@@ -63,6 +63,7 @@ const Login = () => {
         alt=""
         className=" invisible lg:visible w-16 md:w-[300px] lg:w-[600px] absolute lg:static"
       />
+
       <form
         onSubmit={loginHandler}
         className=" w-[90%] h-auto md:w-[60%] lg:w-[400px] px-10 py-10 rounded-lg lg:px-10 lg:py-10 lg:shadow-none lg:border-0 border-2 hover:border-blue-300 shadow-md hover:shadow-blue-400 bg-gradient-to-r from-sky-100 to-blue-200">
@@ -77,6 +78,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none bg-opacity-5"
+              required
             />
             <input
               type="text"
@@ -84,6 +86,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              required
             />
             <h2 className=" text-xs font-semibold ms-auto cursor-pointer">
               Forget password?
@@ -111,21 +114,35 @@ const Login = () => {
             <h2 className=" flex justify-center text-lg lg:text-base mt-8">
               Or login with
             </h2>
-            <div className=" w-[60%] mx-auto flex justify-around mt-4 ">
-              <a
-                href="https://facebook.com"
-                className=" text-blue-600 text-3xl lg:text-2xl">
-                <BsFacebook />
-              </a>
-
-              <a href="https://github.com" className=" text-3xl lg:text-2xl">
-                <BsGithub />
-              </a>
-              <a
-                href="https://google.com"
-                className=" text-green-600 text-3xl lg:text-2xl">
-                <BsGoogle />
-              </a>
+            <div className=" w-[60%] mx-auto flex justify-around my-4 ">
+              <div className="group flex relative">
+                <a
+                  href="https://facebook.com"
+                  className=" text-blue-600 text-3xl lg:text-2xl">
+                  <BsFacebook />
+                </a>
+                <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                  Facebook
+                </span>
+              </div>
+              <div className="group flex relative">
+                <a href="https://github.com" className=" text-3xl lg:text-2xl">
+                  <BsGithub />
+                </a>
+                <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                  Github
+                </span>
+              </div>
+              <div className="group flex relative">
+                <a
+                  href="https://google.com"
+                  className=" text-green-600 text-3xl lg:text-2xl">
+                  <BsGoogle />
+                </a>
+                <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                  Google
+                </span>
+              </div>
             </div>
           </div>
         </div>

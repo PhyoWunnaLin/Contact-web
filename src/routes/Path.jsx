@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
-import RouteGuard from "../components/RouteGuard";
 
 import CreateContact from "../components/CreateContact";
 const Path = () => {
@@ -18,6 +17,7 @@ const Path = () => {
             </RouteGuard>
           }
         />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="createContact" element={<CreateContact />} />

@@ -12,7 +12,7 @@ import { useLogoutMutation } from "../redux/api/authApi";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { removeUserToCookie } from "../redux/services/authSlice";
+import { removeUserFromCookie } from "../redux/services/authSlice";
 
 const Sidebar = ({ open }) => {
   const [active, setActive] = useState("contacts");
@@ -25,7 +25,7 @@ const Sidebar = ({ open }) => {
   const logoutHandler = async () => {
     const { data } = await logout(token);
     if (data?.success) {
-      dispatch(removeUserToCookie());
+      dispatch(removeUserFromCookie());
       nav("/login");
     }
   };
