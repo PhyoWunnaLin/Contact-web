@@ -40,7 +40,7 @@ const ContactTable = () => {
     };
 
   return (
-    <div  className=' bg-blue-100  h-screen '>
+    <div  className=' bg-blue-100  h-screen'>
             <div className=' relative z-10'>
             <table className=' w-full'>
                 <thead className=' border-b-2 border-b-white text-left'>
