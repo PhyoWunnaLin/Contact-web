@@ -11,7 +11,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className=" bg-gray-50 flex justify-between items-center px-5 border py-5">
+      <div className=" bg-gray-50 flex justify-between gap-5 items-center px-5 border py-5">
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
@@ -76,10 +76,10 @@ const Navbar = () => {
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               ></AiOutlineSearch>
             )}
-            <div className=" hover:bg-gray-200 rounded-full p-3 duration-500">
+            <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
             </div>
-            <div className=" hover:bg-gray-200 rounded-full p-3 duration-500">
+            <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
             <div className="sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
