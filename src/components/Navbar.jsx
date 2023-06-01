@@ -21,7 +21,7 @@ const Navbar = () => {
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
-              ? "top-5 opacity-100 sm:hidden "
+              ? "top-4 opacity-100 sm:hidden "
               : "top-[-100px] opacity-0"
           }`}
         >
