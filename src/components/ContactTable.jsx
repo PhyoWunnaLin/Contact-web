@@ -66,13 +66,13 @@ const ContactTable = () => {
                         <th className=' px-10 py-4  text-sm font-semibold tracking-wide'>
                             <span className=' text-gray-600 text-left'>Name</span>
                         </th>
-                        <th className=' px-10  py-4  text-sm font-semibold tracking-wide'>
+                        <th className=' px-10  py-4 max-sm:hidden text-sm font-semibold tracking-wide'>
                             <span className=' text-gray-600 text-left'>Email</span>
                         </th>
-                        <th className=' px-10 py-4  text-sm font-semibold tracking-wide'>
+                        <th className=' px-10 py-4 max-md:hidden text-sm font-semibold tracking-wide'>
                             <span className=' text-gray-600 text-left'>Phone Number</span>
                         </th>
-                        <th className=' px-10 py-4  text-sm font-semibold tracking-wide'>
+                        <th className=' px-10 py-4 max-lg:hidden text-sm font-semibold tracking-wide'>
                             <span className=' text-gray-600 text-left'>Address</span>
                         </th>
                         <th className=' px-10 py-4 flex flex-row items-center text-xl gap-3'>
@@ -107,17 +107,17 @@ const ContactTable = () => {
                         return(
                             <tr key={contact.id} className={` border-b-2 border-b-white ${isHovered === index? 'bg-[#90cdf49f]' : ''}  hover:backdrop:blur-sm duration-500`} onMouseEnter={()=>handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave}>
-                        <td className=' flex flex-row items-center text-left px-10 py-4  text-sm font-semibold tracking-wide'>
-                            <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" className='w-[45px] h-[45px] rounded-full' alt="" />
-                            <span className=' text-gray-600 pl-3'>{contact.name}</span>
+                        <td className=' flex flex-row items-center text-left px-10 py-4 text-sm font-semibold lg:tracking-wide'>
+                            <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" className='lg:w-[45px] lg:h-[45px] w-[30px] h-[30px] rounded-full' alt="" />
+                            <span className=' text-gray-600 lg:pl-3 pl-1 text-sm lg:text-base'>{contact.name}</span>
                         </td>
-                        <td className=' text-left px-10  py-4  text-sm font-semibold tracking-wide'>
-                            <span className=' text-gray-600'>{contact.email}</span>
+                        <td className=' text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide'>
+                            <span className=' text-gray-600 text-sm lg:text-base'>{contact.email}</span>
                         </td>
-                        <td className=' text-left px-10 py-4  text-sm font-semibold tracking-wide'>
-                            <span className=' text-gray-600 '>{contact.phone}</span>
+                        <td className=' text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide'>
+                            <span className=' text-gray-600 text-sm lg:text-base'>{contact.phoneNumber}</span>
                         </td>
-                        <td className=' text-left px-10 py-4  text-sm font-semibold tracking-wide'>
+                        <td className=' text-left max-lg:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide'>
                             <span className=' text-gray-600'>{contact.address}</span>
                         </td>
                         <td className={` ${isHovered === index? 'block' : 'invisible'}  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}>

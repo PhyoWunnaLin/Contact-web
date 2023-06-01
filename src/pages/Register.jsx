@@ -65,6 +65,7 @@ const Register = () => {
         alt="welcome.jpg"
         className=" invisible lg:visible w-16 md:w-[300px] lg:w-[600px] absolute lg:static"
       />
+
       <form
         onSubmit={registerHandler}
         className=" w-[90%] h-auto md:w-[60%] lg:w-[350px] px-10 py-10 rounded-lg lg:px-10 lg:py-7 lg:shadow-none lg:border-0 border-2 hover:border-blue-300 shadow-md hover:shadow-blue-400 lg:mt-10 bg-gradient-to-r from-sky-100 to-blue-200">
@@ -79,6 +80,7 @@ const Register = () => {
               onChange={(e) => setName(e.target.value)}
               placeholder="Name"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none "
+              required
             />
             <input
               type="text"
@@ -86,6 +88,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              required
             />
             <input
               type="text"
@@ -93,6 +96,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              required
             />
             <input
               type="text"
@@ -100,6 +104,7 @@ const Register = () => {
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               placeholder="confirm your password"
               className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              required
             />
           </div>
           {/* <hr className=" my-5" /> */}
@@ -125,20 +130,35 @@ const Register = () => {
           <h2 className=" flex justify-center text-lg lg:text-base mt-8">
             Or Log in with
           </h2>
-          <div className=" w-[60%] mx-auto flex justify-around mt-4 ">
-            <a
-              href="https://facebook.com"
-              className=" text-blue-600 text-3xl lg:text-2xl">
-              <BsFacebook />
-            </a>
-            <a href="https://github.com" className=" text-3xl lg:text-2xl">
-              <BsGithub />
-            </a>
-            <a
-              href="https://google.com"
-              className=" text-green-600 text-3xl lg:text-2xl">
-              <BsGoogle />
-            </a>
+          <div className=" w-[60%] mx-auto flex justify-around my-4 ">
+            <div className="group flex relative">
+              <a
+                href="https://facebook.com"
+                className=" text-blue-600 text-3xl lg:text-2xl">
+                <BsFacebook />
+              </a>
+              <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                Facebook
+              </span>
+            </div>
+            <div className="group flex relative">
+              <a href="https://github.com" className=" text-3xl lg:text-2xl">
+                <BsGithub />
+              </a>
+              <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                Github
+              </span>
+            </div>
+            <div className="group flex relative">
+              <a
+                href="https://google.com"
+                className=" text-green-600 text-3xl lg:text-2xl">
+                <BsGoogle />
+              </a>
+              <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+                Google
+              </span>
+            </div>
           </div>
         </div>
       </form>
