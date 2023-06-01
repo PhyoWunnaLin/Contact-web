@@ -33,7 +33,7 @@ const Login = () => {
       <div className=" flex justify-center h-screen items-center">
         <button
           type="button"
-          className=" bg-blue-400 px-4 py-1 rounded shadow-md flex items-center gap-2 text-white font-bold text-xl"
+          className=" bg-blue-400 px-4 py-1 rounded shadow-md flex items-center gap-2 text-white font-bold text-xl tracking-wider"
           disabled>
           <svg
             aria-hidden="true"
@@ -65,7 +65,7 @@ const Login = () => {
       />
       <form
         onSubmit={loginHandler}
-        className=" w-[90%] h-auto md:w-[60%] lg:w-[300px] px-10 py-10 rounded-lg lg:px-0 lg:py-0 lg:shadow-none lg:border-0 border-2 hover:border-blue-200 shadow-md hover:shadow-blue-200">
+        className=" w-[90%] h-auto md:w-[60%] lg:w-[400px] px-10 py-10 rounded-lg lg:px-10 lg:py-10 lg:shadow-none lg:border-0 border-2 hover:border-blue-300 shadow-md hover:shadow-blue-400 bg-gradient-to-r from-sky-100 to-blue-200">
         <h2 className=" flex justify-center font-semibold text-3xl text-blue-900">
           Login
         </h2>
@@ -76,14 +76,14 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none bg-opacity-5"
             />
             <input
               type="text"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
             />
             <h2 className=" text-xs font-semibold ms-auto cursor-pointer">
               Forget password?
@@ -117,6 +117,7 @@ const Login = () => {
                 className=" text-blue-600 text-3xl lg:text-2xl">
                 <BsFacebook />
               </a>
+
               <a href="https://github.com" className=" text-3xl lg:text-2xl">
                 <BsGithub />
               </a>

@@ -35,7 +35,7 @@ const Register = () => {
       <div className=" flex justify-center h-screen items-center">
         <button
           type="button"
-          className=" bg-blue-400 px-4 py-1 rounded shadow-md flex items-center gap-2 text-white font-bold text-xl"
+          className=" bg-blue-400 px-4 py-1 rounded-lg shadow-md flex items-center gap-2 text-white font-bold text-xl tracking-wider"
           disabled>
           <svg
             aria-hidden="true"
@@ -52,7 +52,7 @@ const Register = () => {
               fill="currentFill"
             />
           </svg>
-          Loading ...
+          Thanks for Joining Us ...
         </button>
       </div>
     );
@@ -67,7 +67,7 @@ const Register = () => {
       />
       <form
         onSubmit={registerHandler}
-        className=" w-[90%] h-auto md:w-[60%] lg:w-[300px] px-10 py-10 rounded-lg lg:px-0 lg:py-0 lg:shadow-none lg:border-0 border-2 hover:border-blue-200 shadow-md hover:shadow-blue-200 lg:mt-10">
+        className=" w-[90%] h-auto md:w-[60%] lg:w-[350px] px-10 py-10 rounded-lg lg:px-10 lg:py-7 lg:shadow-none lg:border-0 border-2 hover:border-blue-300 shadow-md hover:shadow-blue-400 lg:mt-10 bg-gradient-to-r from-sky-100 to-blue-200">
         <h2 className=" flex justify-center font-semibold text-3xl text-blue-900">
           Register Here
         </h2>
@@ -78,28 +78,28 @@ const Register = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Name"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none "
             />
             <input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
             />
             <input
               type="text"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
             />
             <input
               type="text"
               value={password_confirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               placeholder="confirm your password"
-              className=" border-b hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
+              className=" border-b-2 hover:border-blue-400 hover:shadow-md rounded px-4 py-1 outline-none"
             />
           </div>
           {/* <hr className=" my-5" /> */}
