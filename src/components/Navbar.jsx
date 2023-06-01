@@ -11,7 +11,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className=" flex justify-between items-center px-5 border py-5">
+      <div className=" bg-gray-50 flex justify-between items-center px-5 border py-5">
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
@@ -36,7 +36,7 @@ const Navbar = () => {
             <RxHamburgerMenu
               onClick={() => setOpen(!open)}
               className="text-2xl cursor-pointer text-gray-600"
-            ></RxHamburgerMenu>
+            />
           </div>
           <div className=" flex items-center gap-4">
             <RiContactsBook2Fill className=" sm:block hidden text-[50px] text-blue-500"></RiContactsBook2Fill>
