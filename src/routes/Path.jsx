@@ -5,13 +5,22 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import RouteGuard from "../components/RouteGuard";
 
+import CreateContact from "../components/CreateContact";
 const Path = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<RouteGuard><Dashboard/></RouteGuard>} />
+        <Route
+          path="/"
+          element={
+            <RouteGuard>
+              <Dashboard />
+            </RouteGuard>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="createContact" element={<CreateContact />} />
       </Routes>
     </div>
   );
