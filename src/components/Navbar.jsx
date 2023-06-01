@@ -14,7 +14,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch()
   const user = JSON.parse(Cookies.get("user"))
-  // console.log(user);
+  // console.log(user)
   return (
     <>
       <div className=" bg-gray-50 flex justify-between gap-5 items-center px-5 border py-5">

@@ -56,7 +56,7 @@ const ContactTable = () => {
           </div>
         );
       }
-      
+
   return (
     <div  className=' bg-blue-100 '>
             <div className=' relative z-10'>
@@ -115,7 +115,7 @@ const ContactTable = () => {
                             <span className=' text-gray-600 text-sm lg:text-base'>{contact.email}</span>
                         </td>
                         <td className=' text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide'>
-                            <span className=' text-gray-600 text-sm lg:text-base'>{contact.phoneNumber}</span>
+                            <span className=' text-gray-600 text-sm lg:text-base'>{contact.phone}</span>
                         </td>
                         <td className=' text-left max-lg:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide'>
                             <span className=' text-gray-600'>{contact.address}</span>
