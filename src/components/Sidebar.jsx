@@ -7,12 +7,12 @@ import { IoMdTrash } from "react-icons/io";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsFillSendPlusFill } from "react-icons/bs";
 
-const Sidebar = () => {
+const Sidebar = ({open}) => {
   const [active, setActive] = useState("contacts");
   return (
     <div>
       <div
-        className={`w-64 shadow-lg h-screen flex flex-col gap-5 pt-5 fixed transition-all z-auto duration-500 ease-in`}
+        className={`w-64 shadow-lg h-screen flex flex-col gap-5 pt-5 fixed transition-all z-auto duration-300 ease-in ${open ? " left-0 opacity-100" : "left-[-150px] opacity-0"}`}
       >
         <div className="flex items-center gap-3">
           <p>
