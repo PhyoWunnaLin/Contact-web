@@ -4,11 +4,17 @@ import { RiContactsBook2Fill } from "react-icons/ri";
 import { MdSettings } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineSearch, AiOutlineQuestionCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
+import { setSearchTerm } from "../redux/services/contactSlice";
+import Cookies from "js-cookie";
 
 const Navbar = () => {
   const [searchOnclick, setSearchOnClick] = useState(false);
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch()
+  const user = JSON.parse(Cookies.get("user"))
+  // console.log(user);
   return (
     <>
       <div className=" bg-gray-50 flex justify-between gap-5 items-center px-5 border py-5">
@@ -23,7 +29,12 @@ const Navbar = () => {
             className={` w-[200px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}
           >
             <AiOutlineSearch className=" text-gray-600 text-[25px] ml-3"></AiOutlineSearch>
-            <p className=" text-gray-400 text-sm ">Search</p>
+            {/* <p className=" text-gray-400 text-sm ">Search</p> */}
+            <input onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
+                type="text"
+                placeholder="Search"
+                className=" bg-gray-100 flex-1 outline-none border-none relative w-[20px] "
+              />
           </div>
         </div>
 
@@ -50,10 +61,10 @@ const Navbar = () => {
               <div className="ml-3 bg-gray-200 rounded-full p-2 duration-500">
                 <AiOutlineSearch className=" text-gray-600 text-[25px]"></AiOutlineSearch>
               </div>
-              <input
+              <input onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
                 type="text"
                 placeholder="Search"
-                className=" bg-gray-100 flex-1 outline-none border-none"
+                className=" bg-gray-100 flex-1 outline-none border-none pl-5 relative w-[20px] "
               />
             </div>
           </div>
@@ -83,7 +94,7 @@ const Navbar = () => {
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
             <div className="sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
-              <p className=" text-lg text-white font-bold">K</p>
+              <p className=" text-lg text-white font-bold">{user.name.substr(0,1).toUpperCase()}</p>
             </div>
           </div>
         </div>
