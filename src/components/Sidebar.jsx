@@ -50,8 +50,8 @@ const Sidebar = ({ open }) => {
               setActive("contacts");
               setShow(<ContactTable />);
             }}
-            className={` hover:bg-blue-50 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
-              active == "contacts" ? " text-sky-700 text-base bg-blue-100" : ""
+            className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
+              active == "contacts" ? " text-sky-700 text-base bg-blue-200" : ""
             }`}
           >
             <TiUser className=" mr-4" />
@@ -59,9 +59,9 @@ const Sidebar = ({ open }) => {
           </p>
           <p
             onClick={() => setActive("frequent")}
-            className={` hover:bg-blue-50 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
+            className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
               active == "frequent"
-                ? " text-sky-700 text-[16px] bg-blue-100"
+                ? " text-sky-700 text-[16px] bg-blue-200"
                 : ""
             }`}
           >
@@ -70,9 +70,9 @@ const Sidebar = ({ open }) => {
           </p>
           <p
             onClick={() => setActive("otherContacts")}
-            className={` hover:bg-blue-50 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
+            className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
               active == "otherContacts"
-                ? " text-sky-700 text-[16px] bg-blue-100"
+                ? " text-sky-700 text-[16px] bg-blue-200"
                 : ""
             }`}
           >
@@ -87,8 +87,8 @@ const Sidebar = ({ open }) => {
           <div>
             <p
               onClick={() => setActive("fix")}
-              className={` hover:bg-blue-50 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
-                active == "fix" ? " text-sky-700 text-[16px] bg-blue-100" : ""
+              className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
+                active == "fix" ? " text-sky-700 text-[16px] bg-blue-200" : ""
               }`}
             >
               <SlMagicWand className=" mr-4" />
@@ -96,8 +96,8 @@ const Sidebar = ({ open }) => {
             </p>
             <p
               onClick={() => setActive("trash")}
-              className={` hover:bg-blue-50 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
-                active == "trash" ? " text-sky-700 text-[16px] bg-blue-100" : ""
+              className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
+                active == "trash" ? " text-sky-700 text-[16px] bg-blue-200" : ""
               }`}
             >
               <IoMdTrash className=" mr-4" />
