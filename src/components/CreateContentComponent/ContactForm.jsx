@@ -17,12 +17,12 @@ const ContactForm = () => {
   const [address, setAddress] = useState("jhjghf");
   const [phone, setPhone] = useState("099897");
   const nav = useNavigate();
-  const [CreateContact , {isLoading}] = useCreateContactMutation();
+  const [CreateContact, { isLoading }] = useCreateContactMutation();
   const SubmitHandler = async (e) => {
     e.preventDefault();
     const contact = { name, email, address, phone };
-    const data = await CreateContact({ contact, token });
-    console.log(data.data.success);
+    const data = await CreateContact({ token, contact });
+
     if (data?.data?.success) {
       nav("/");
       setName("");
@@ -39,8 +39,7 @@ const ContactForm = () => {
         <form
           id="create"
           onSubmit={SubmitHandler}
-          className="w-[50%] flex-grow m-auto flex gap-4 flex-col"
-        >
+          className="w-[50%] flex-grow m-auto flex gap-4 flex-col">
           <NameInput setName={setName} name={name} />
           {/* <JobInput /> */}
           <EmailPhoneAddress
