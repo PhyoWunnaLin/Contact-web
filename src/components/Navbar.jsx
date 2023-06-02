@@ -93,7 +93,7 @@ const Navbar = () => {
             <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
-            <div className="sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
+            <div className=" cursor-pointer sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
               <p className=" text-lg text-white font-bold">{user.name.substr(0,1).toUpperCase()}</p>
             </div>
           </div>

@@ -10,8 +10,11 @@ import {
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../redux/services/contactSlice";
-import { BsFillTrashFill } from "react-icons/bs";
+import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
+
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
   const token = Cookies.get("token");
@@ -133,7 +136,7 @@ const ContactTable = () => {
                 return (
                   <tr
                     key={contact.id}
-                    className={` border-b-2 border-b-white ${
+                    className={` border-b-2 border-b-white cursor-pointer ${
                       isHovered === index ? "bg-[#90cdf49f]" : ""
                     }  hover:backdrop:blur-sm duration-500`}
                     onMouseEnter={() => handleMouseEnter(index)}
@@ -145,21 +148,19 @@ const ContactTable = () => {
                         className="lg:w-[45px] lg:h-[45px] w-[30px] h-[30px] rounded-full"
                         alt=""
                       />
-                      <span className=" text-gray-600 lg:pl-3 pl-1 text-sm lg:text-base">
-                        {contact.name}
-                      </span>
+
                     </td>
-                    <td className=" text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide">
+                    <td className=" text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.email}
                       </span>
                     </td>
-                    <td className=" text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide">
+                    <td className=" text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.phone}
                       </span>
                     </td>
-                    <td className=" text-left max-lg:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide">
+                    <td className=" text-left max-lg:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600">{contact.address}</span>
                     </td>
                     <td
@@ -168,19 +169,25 @@ const ContactTable = () => {
                       }  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}
                     >
                       <span>
-                        <AiOutlineStar className=" cursor-pointer"></AiOutlineStar>
+                        <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </span>
+                      <Link tp={`/info/${contact.id}`}>
+                        <span>
+                          <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
+                        </span>
+                      </Link>
                       <span>
-                        <MdOutlineEdit className=""></MdOutlineEdit>
+                        <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
                       </span>
                       <span
                         className=""
                         onClick={() => deleteHandler(contact?.id)}
                       >
-                        <BsFillTrashFill className=" text-red-600 cursor-pointer" />
+                        <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
                       </span>
                     </td>
                   </tr>
+
                 );
               })}
           </tbody>

@@ -13,7 +13,7 @@ const Path = () => {
         <Route path="/" element={<RouteGuard><Dashboard/></RouteGuard>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="createContact" element={<CreateContact />} />
+        <Route path="/createContact" element={<CreateContact />} />
         <Route path="/info/:id" element={<UserInfo />} />
       </Routes>
     </div>
