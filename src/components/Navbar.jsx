@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiContactsBook2Fill } from "react-icons/ri";
 import { MdSettings } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2, RxCross1 } from "react-icons/rx";
 import { AiOutlineSearch, AiOutlineQuestionCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
@@ -25,15 +25,18 @@ const Navbar = () => {
               : "top-[-100px] opacity-0"
           }`}
         >
-          <div
-            className={` w-[200px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}
-          >
+          <div className={` w-[200px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
             <AiOutlineSearch className=" text-gray-600 text-[25px] ml-3"></AiOutlineSearch>
-            {/* <p className=" text-gray-400 text-sm ">Search</p> */}
             <input onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
                 type="text"
                 placeholder="Search"
                 className=" bg-gray-100 flex-1 outline-none border-none relative w-[20px] "
+              />
+              <RxCross2
+                onClick={() => setSearchOnClick(!searchOnclick)}
+                className={` ${
+                  searchOnclick ? "block" : "block"
+                } sm:hidden block text-gray-600 cursor-pointer text-[20px] ml-3 absolute right-0 top-[0]`}
               />
           </div>
         </div>
@@ -44,10 +47,20 @@ const Navbar = () => {
           }  flex items-center gap-4`}
         >
           <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
-            <RxHamburgerMenu
+            {open ?(
+                <RxCross1
+                onClick={() => setOpen(!open)}
+                className={` ${
+                  open ? "block" : "block"
+                } text-2xl cursor-pointer text-gray-600"]`}
+              />
+              ) : (
+                <RxHamburgerMenu
               onClick={() => setOpen(!open)}
               className="text-2xl cursor-pointer text-gray-600"
             />
+              )}
+            
           </div>
           <div className=" flex items-center gap-4">
             <RiContactsBook2Fill className=" sm:block hidden text-[50px] text-blue-500"></RiContactsBook2Fill>
@@ -72,21 +85,21 @@ const Navbar = () => {
 
         <div>
           <div className=" flex lg:gap-5 md:gap-2 sm:gap-1 gap-0 items-center">
-            {searchOnclick ? (
+            {/* {searchOnclick ? (
               <RxCross2
                 onClick={() => setSearchOnClick(!searchOnclick)}
                 className={` ${
                   searchOnclick ? "block" : "block"
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               />
-            ) : (
+            ) : ( */}
               <AiOutlineSearch
-                onClick={() => setSearchOnClick(!searchOnclick)}
+                onClick={() => setSearchOnClick(true)}
                 className={` ${
-                  searchOnclick ? "block" : "block"
+                  searchOnclick ? "hidden" : "block"
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               ></AiOutlineSearch>
-            )}
+            {/* )} */}
             <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
             </div>

@@ -11,7 +11,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* Email */}
       <div className=" flex justify-around items-center ">
         <div>
-          <AiTwotoneMail />
+          <AiTwotoneMail className="text-xl" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -31,7 +31,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* Phone */}
       <div className=" flex justify-around items-center ">
         <div>
-          <BsFillTelephoneFill
+          <BsFillTelephoneFill className="text-xl"
             onClick={() => {
               setMoreJob(!moreJob);
               console.log(moreJob);
@@ -56,7 +56,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* birthday */}
       <div className=" flex justify-around items-center ">
         <div>
-          <FaBirthdayCake />
+          <FaBirthdayCake className="text-xl"/>
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -73,7 +73,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* note */}
       <div className=" flex justify-around items-center ">
         <div>
-          <SlNote />
+          <SlNote className="text-xl"/>
         </div>
         <div>
           <div className=" flex justify-between ">

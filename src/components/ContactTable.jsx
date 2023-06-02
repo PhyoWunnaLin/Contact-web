@@ -134,6 +134,7 @@ const ContactTable = () => {
               })
               .map((contact, index) => {
                 return (
+                  // <Link to={`/createContact`}>
                   <tr
                     key={contact.id}
                     className={` border-b-2 border-b-white cursor-pointer ${
@@ -145,12 +146,14 @@ const ContactTable = () => {
                     <td className=" flex flex-row items-center text-left px-10 py-4 text-sm font-semibold lg:tracking-wide">
                       <img
                         src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-                        className="lg:w-[45px] lg:h-[45px] w-[30px] h-[30px] rounded-full"
+                        className=" md:w-[45px] md:h-[45px] w-[40px] h-[40px] rounded-full"
                         alt=""
                       />
-
+                      <span className=" text-gray-600 text-sm lg:text-base pl-2 select-none">
+                        {contact.name}
+                      </span>
                     </td>
-                    <td className=" text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className="  text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.email}
                       </span>
@@ -187,6 +190,7 @@ const ContactTable = () => {
                       </span>
                     </td>
                   </tr>
+                  // </Link>
 
                 );
               })}

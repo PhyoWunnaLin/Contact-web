@@ -1,14 +1,14 @@
 import React from "react";
-import { FaBirthdayCake } from "react-icons/fa";
+import { FaRegAddressCard } from "react-icons/fa";
 const OtherContact = ({ setAddress, address }) => {
   return (
     <div>
-      <div className=" flex justify-around">
-        <div>
-          <FaBirthdayCake />
+      <div className=" flex justify-around items-center">
+        <div >
+          <FaRegAddressCard className=" text-xl"/>
         </div>
         <div>
-          <div className=" flex justify-between ">
+          <div className=" flex justify-between">
             <div className="  flex flex-col justify-center items-center gap-4">
               <input
                 value={address}

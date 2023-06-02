@@ -6,9 +6,9 @@ const NameInput = ({ setName, name }) => {
   const [more, setMore] = useState("false");
 
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-around items-center">
       <div>
-        <BsFillPeopleFill
+        <BsFillPeopleFill className="text-xl"
           onClick={() => {
             setMore(!more);
           }}
