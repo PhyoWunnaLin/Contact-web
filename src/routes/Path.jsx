@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
+import CreateContact from "../components/CreateContact";
 import RouteGuard from "../components/RouteGuard";
-
 const Path = () => {
   return (
     <div>
@@ -12,6 +12,7 @@ const Path = () => {
         <Route path="/" element={<RouteGuard><Dashboard/></RouteGuard>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="createContact" element={<CreateContact />} />
       </Routes>
     </div>
   );
