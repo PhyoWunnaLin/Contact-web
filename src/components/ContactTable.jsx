@@ -148,9 +148,7 @@ const ContactTable = () => {
                         className="lg:w-[45px] lg:h-[45px] w-[30px] h-[30px] rounded-full"
                         alt=""
                       />
-                      <span className=" text-gray-600 lg:pl-3 pl-1 text-sm lg:text-base select-none">
-                        {contact.name}
-                      </span>
+
                     </td>
                     <td className=" text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
