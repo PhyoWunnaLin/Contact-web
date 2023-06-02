@@ -171,7 +171,7 @@ const ContactTable = () => {
                       <span>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </span>
-                      <Link tp={`/info/${contact.id}`}>
+                      <Link to={`/info/${contact.id}`}>
                         <span>
                           <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
                         </span>
