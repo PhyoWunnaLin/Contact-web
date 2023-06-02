@@ -25,7 +25,7 @@ const UserInfo = () => {
   if(isLoading){
     return(
         <div className="flex justify-center items-center h-screen">
-            <h1 className=" bg-sky-600 text-white text-lg font-bold rounded px-5 py-1">Loading...</h1>
+            <h1 className=" bg-sky-600 text-white text-lg font-bold rounded px-5 py-1">Loading....</h1>
         </div>
     )
   }
