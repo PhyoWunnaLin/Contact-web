@@ -31,6 +31,13 @@ export const contactApi = createApi({
       }),
       invalidatesTags: ["contact"],
     }),
+    getUserInfo: builder.query({
+      query: ({ id, token }) => ({
+        url: `/contact/${id}`,
+        headers: { authorization: `Bearer ${token}` },
+      }),
+      providesTags: ["contact"],
+    }),
   }),
 });
 
@@ -38,4 +45,5 @@ export const {
   useGetContactQuery,
   useCreateContactMutation,
   useDeleteContactMutation,
+  useGetUserInfoQuery
 } = contactApi;

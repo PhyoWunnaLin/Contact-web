@@ -168,7 +168,7 @@ const ContactTable = () => {
                       }  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}
                     >
                       <span>
-                        <AiOutlineStar className=""></AiOutlineStar>
+                        <AiOutlineStar className=" cursor-pointer"></AiOutlineStar>
                       </span>
                       <span>
                         <MdOutlineEdit className=""></MdOutlineEdit>

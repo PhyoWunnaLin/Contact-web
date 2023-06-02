@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import CreateContact from "../components/CreateContact";
 import RouteGuard from "../components/RouteGuard";
+import UserInfo from "../pages/UserInfo";
 const Path = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const Path = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="createContact" element={<CreateContact />} />
+        <Route path="/info/:id" element={<UserInfo />} />
       </Routes>
     </div>
   );
