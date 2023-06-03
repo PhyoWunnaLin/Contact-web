@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
   const token = Cookies.get("token");
-  const { data, isLoading } = useGetContactQuery(token);
+  const { data, isLoading, isSuccess } = useGetContactQuery(token);
   const dispatch = useDispatch();
   const contacts = useSelector((state) => state.contactSlice.contact);
   const searchTerm = useSelector((state) => state.contactSlice.searchTerm);
