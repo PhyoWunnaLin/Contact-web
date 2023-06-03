@@ -31,10 +31,10 @@ const UserInfo = () => {
   }
   return (
     <>
-      <div className=" flex justify-center items-center bg-blue-200">
+      <div className=" flex justify-center items-center bg-blue-200 py-10">
         <div className="w-[80%] shadow-lg my-16 p-5 flex justify-center rounded relative py-10 bg-blue-100">
           <Link to={"/"}>
-            <div className=" absolute left-2 top-2 bg-blue-200 font-bold rounded-full p-2  hover:bg-gray-100 hover:shadow duration-500">
+            <div className=" absolute left-2 top-2 bg-blue-200 font-bold rounded-full p-2  hover:bg-gray-200 hover:shadow duration-500">
               <BsArrowLeft className=" text-xl cursor-pointer" />
             </div>
           </Link>
