@@ -33,18 +33,18 @@ const UserInfo = () => {
   }
   return (
     <>
-      <div className=" flex justify-center my-16 max-sm:my-0 items-center">
-        <div className="w-[80%] max-sm:w-[100%] sm:shadow-lg sm:p-5 max-sm:py-5 flex justify-center rounded relative py-10">
+      <div className=" flex justify-center py-16 max-sm:py-0 items-center bg-blue-200">
+        <div className="w-[80%] max-sm:w-[100%] sm:shadow-lg sm:p-5 max-sm:py-5 flex justify-center rounded bg-blue-100 relative py-10">
           <Link to={"/"}>
-            <div className=" absolute left-2 top-2 bg-gray-50 rounded-full p-2 hover:bg-gray-100 hover:shadow duration-500">
+            <div className=" absolute left-2 top-2 bg-blue-200 font-bold rounded-full p-2  hover:bg-gray-100 hover:shadow duration-500">
               <BsArrowLeft className=" text-xl cursor-pointer" />
             </div>
           </Link>
-          <div className="w-[80%] lg:w-[95%] flex flex-col gap-10">
+          <div className="w-[80%] lg:w-[95%] flex flex-col py-5 gap-10">
             <div className=" p-1 flex max-md:flex-col justify-between items-center gap-8">
               <div className="flex max-md:flex-col items-center gap-4">
                 <div className=" p-12 bg-cyan-700 w-40 max-sm:w-32 max-sm:p-8 flex justify-center items-center rounded-full">
-                  <p className=" text-6xl font-medium text-white">
+                  <p className=" text-6xl font-medium text-white ">
                     {user?.name.substr(0, 1).toUpperCase()}
                   </p>
                 </div>
@@ -52,7 +52,7 @@ const UserInfo = () => {
                   <p className=" text-2xl font-medium max-md:mx-auto tracking-wide">
                     {user?.name}
                   </p>
-                  <p className=" border rounded-xl cursor-pointer max-md:mx-auto hover:shadow-md hover:bg-gray-50 duration-500 border-gray-400 flex items-center px-3 gap-3 justify-center py-1 font-medium">
+                  <p className=" border rounded-xl cursor-pointer max-md:mx-auto hover:shadow-md hover:bg-gray-100 duration-500 border-gray-400 flex items-center px-3 gap-3 justify-center py-1 font-medium">
                     <BsSendPlusFill className=" text-teal-700" /> Label
                   </p>
                 </div>
@@ -89,19 +89,19 @@ const UserInfo = () => {
                 <h2 className="font-medium text-lg">Contact Detail</h2>
                 <div className="flex gap-3 items-center">
                   <MdOutlineMarkEmailRead className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide text-sky-500">{user?.email}</p>
+                  <p className=" tracking-wide  text-sky-600">{user?.email}</p>
                 </div>
                 <div className="flex gap-3 items-center">
                   <HiOutlinePhone className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide text-sky-500">{user?.phone}</p>
+                  <p className=" tracking-wide  text-sky-600">{user?.phone}</p>
                 </div>
                 <div className="flex gap-3 items-center">
                   <LuCake className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide">1/1/2001</p>
+                  <p className=" tracking-wide  text-sky-600">December 19,1992</p>
                 </div>
                 <div className="flex gap-3 items-center">
                   <FaRegAddressCard className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide">{user?.address}</p>
+                  <p className=" tracking-wide  text-sky-600">{user?.address}</p>
                 </div>
               </div>
               <div className="xl:w-[40%] w-[100%] flex flex-col gap-3">
