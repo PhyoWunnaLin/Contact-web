@@ -17,7 +17,7 @@ const Navbar = () => {
   // console.log(user)
   return (
     <>
-      <div className=" bg-gray-50 flex justify-between gap-5 items-center px-5 border py-5">
+      <div className=" bg-gray-50 flex justify-between gap-5 items-center px-2 sm:px-5 border h-20">
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
@@ -44,7 +44,7 @@ const Navbar = () => {
         <div
           className={`flex ${
             searchOnclick ? "hidden sm:flex" : "block"
-          }  flex items-center gap-4 max-[400px]:w-[150px]`}
+          }  flex items-center sm:gap-4 gap-2 max-[400px]:w-[150px]`}
         >
           <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
             {open ?(
@@ -84,7 +84,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <div className=" flex lg:gap-5 md:gap-2 sm:gap-1 gap-0 items-center">
+          <div className=" flex sm:gap-5 gap-4 items-center">
             {/* {searchOnclick ? (
               <RxCross2
                 onClick={() => setSearchOnClick(!searchOnclick)}
@@ -100,10 +100,10 @@ const Navbar = () => {
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               ></AiOutlineSearch>
             {/* )} */}
-            <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
+            <div className="max-sm:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
             </div>
-            <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
+            <div className="max-sm:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
             <div className=" cursor-pointer sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
