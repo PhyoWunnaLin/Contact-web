@@ -6,7 +6,6 @@ import bell from "../assets/bells.svg";
 import people from "../assets/publicdomainq-buesinesspeople.svg";
 
 const CreateContact = () => {
-
   return (
     <div className="bg-[#a2d2ff] m-auto ">
       <img src={bell} alt="" className=" fixed top-30 w-32 opacity-[0.2]" />

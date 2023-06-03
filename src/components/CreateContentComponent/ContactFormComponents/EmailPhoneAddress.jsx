@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { AiTwotoneMail } from "react-icons/ai";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaBirthdayCake } from "react-icons/fa";
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { SlCalender } from "react-icons/sl";
 import { SlNote } from "react-icons/sl";
 const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
   const [moreJob, setMoreJob] = useState("false");
@@ -9,9 +8,9 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
   return (
     <div className=" flex gap-3 flex-col">
       {/* Email */}
-      <div className=" flex justify-around items-center ">
+      <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <AiTwotoneMail className="text-xl" />
+          <AiOutlineMail className="text-2xl" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -29,9 +28,10 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
         </div>
       </div>
       {/* Phone */}
-      <div className=" flex justify-around items-center ">
+      <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <BsFillTelephoneFill className="text-xl"
+          <AiOutlinePhone
+            className=" text-2xl"
             onClick={() => {
               setMoreJob(!moreJob);
               console.log(moreJob);
@@ -54,9 +54,9 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
         </div>
       </div>
       {/* birthday */}
-      <div className=" flex justify-around items-center ">
+      <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <FaBirthdayCake className="text-xl"/>
+          <SlCalender className="text-2xl" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -71,9 +71,9 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
         </div>
       </div>
       {/* note */}
-      <div className=" flex justify-around items-center ">
+      <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <SlNote className="text-xl"/>
+          <SlNote className="text-xl" />
         </div>
         <div>
           <div className=" flex justify-between ">

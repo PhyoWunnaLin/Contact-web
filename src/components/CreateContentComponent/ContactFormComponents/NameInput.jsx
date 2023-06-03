@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import { BsFillPeopleFill, BsFillTelephoneFill } from "react-icons/bs";
+import { BsPeople } from "react-icons/bs";
 
 const NameInput = ({ setName, name }) => {
   const [more, setMore] = useState("false");
 
   return (
-    <div className="flex justify-around items-center">
+    <div className="flex justify-center items-center gap-6">
       <div>
-        <BsFillPeopleFill className="text-xl"
+        <BsPeople
+          className=" text-2xl"
           onClick={() => {
             setMore(!more);
           }}
@@ -22,7 +23,7 @@ const NameInput = ({ setName, name }) => {
               onChange={(e) => {
                 setName(e.target.value);
               }}
-              className="w-[300px]  rounded-lg bg-blue-50 transition-transform px-6  py-2 placeholder-violet-300 outline-none text-blue-950 scale-1 hover:scale-105"
+              className=" w-[300px] rounded-lg bg-blue-50 transition-transform px-6  py-2 placeholder-violet-300 outline-none text-blue-950 scale-1 hover:scale-105"
               type="text"
               placeholder="First Name"
               required

@@ -3,9 +3,9 @@ import { FaRegAddressCard } from "react-icons/fa";
 const OtherContact = ({ setAddress, address }) => {
   return (
     <div>
-      <div className=" flex justify-around items-center">
+      <div className=" flex justify-center gap-6 items-center">
         <div >
-          <FaRegAddressCard className=" text-xl"/>
+          <FaRegAddressCard className=" text-2xl"/>
         </div>
         <div>
           <div className=" flex justify-between">

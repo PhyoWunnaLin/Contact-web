@@ -8,28 +8,25 @@ import ModalContents from "./ModalContents";
 import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 
-const ImagesUpload = ({isLoading}) => {
+const ImagesUpload = ({ isLoading }) => {
   const [profileImage, setProfileImages] = useState("");
   const [error, setError] = useState(true);
   const [opened, { open, close }] = useDisclosure(false);
 
-  if(isLoading){
-    toast('working...',{
+  if (isLoading) {
+    toast("working...", {
       style: {
-        border: '1px solid #000',
-        padding: '5px 20px',
-        color: '#fff',
-        backgroundColor: "#000000ff"
+        border: "1px solid #000",
+        padding: "5px 20px",
+        color: "#fff",
+        backgroundColor: "#000000ff",
       },
-    })
+    });
   }
-  
+
   return (
     <div className="bg-[#a2d2ff]  z-40 py-4  flex  justify-around overflow-hidden w-full lg:w-5/6 md:w-5/6  sticky top-0 lg:gap-5 md:gap-5">
-      <Toaster
-      position="top-center"
-      reverseOrder={false}
-    />
+      <Toaster position="top-center" reverseOrder={false} />
       <Modal
         opened={opened}
         onClose={close}
@@ -38,12 +35,15 @@ const ImagesUpload = ({isLoading}) => {
         centered>
         <ModalContents close={close} />
       </Modal>
-      <div className=" flex  flex-col">
+      <div className=" group flex relative">
         <Link to="/">
-          <GrFormClose className=" text-2xl " />
+          <GrFormClose className=" text-3xl" />
         </Link>
-        <p className=" lg:hidden md:hidden ">Edit Contact</p>
+        <span className=" group-hover:opacity-100 transition-opacity bg-gray-500 px-2 text-lg text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">
+          Cancel
+        </span>
       </div>
+
       <div className=" ">
         <div
           onClick={open}
@@ -56,11 +56,11 @@ const ImagesUpload = ({isLoading}) => {
         </div>
       </div>
       <div className="md:flex lg:flex flex-col-reverse">
-        <button 
+        <button
           disabled={isLoading && true}
           form="create"
           type="submit"
-          className=" bg-violet-300  hover:bg-violet-300 active:bg-violet-600 px-5 py-1 rounded text-violet-800">
+          className=" bg-violet-300 shadow font-semibold  hover:bg-violet-300 hover:shadow-md hover:shadow-violet-400 active:bg-violet-600 px-5 py-1 rounded text-violet-800">
           Save
         </button>
       </div>
