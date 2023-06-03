@@ -25,7 +25,7 @@ const Navbar = () => {
               : "top-[-100px] opacity-0"
           }`}
         >
-          <div className={` w-[200px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
+          <div className={` max-[500px]:w-[250px] max-[460px]:w-[200px] max-[400px]:w-[150px] w-[300px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
             <AiOutlineSearch className=" text-gray-600 text-[25px] ml-3"></AiOutlineSearch>
             <input onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
                 type="text"
@@ -44,7 +44,7 @@ const Navbar = () => {
         <div
           className={`flex ${
             searchOnclick ? "hidden sm:flex" : "block"
-          }  flex items-center gap-4`}
+          }  flex items-center gap-4 max-[400px]:w-[150px]`}
         >
           <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
             {open ?(
@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
           <div className=" flex items-center gap-4">
             <RiContactsBook2Fill className=" sm:block hidden text-[50px] text-blue-500"></RiContactsBook2Fill>
-            <h1 className=" text-2xl text-gray-600">Contacts</h1>
+            <h1 className=" text-2xl text-gray-600 max-[380px]:in">Contacts</h1>
           </div>
         </div>
 

@@ -84,8 +84,8 @@ const ContactTable = () => {
   }
 
   return (
-    <div className=" bg-blue-100 ">
-      <div className=" relative z-10">
+    <div className=" bg-blue-100">
+      <div className=" relative z-10 ">
         <table className=" w-full">
           <thead className=" border-b-2 border-b-white text-left">
             <tr className="">
@@ -118,7 +118,7 @@ const ContactTable = () => {
           <tbody className=" z-10">
             <tr>
               <td className="px-10 py-4">
-                <span className=" text-blue-600 font-bold">CONTACTS</span>
+                <span className=" text-blue-600 font-bold">CONTACTS ({contacts?.length})</span>
               </td>
             </tr>
 
@@ -197,7 +197,6 @@ const ContactTable = () => {
           </tbody>
         </table>
       </div>
-
       <svg
         className="  fixed left-0 bottom-0"
         xmlns="http://www.w3.org/2000/svg"
@@ -209,6 +208,7 @@ const ContactTable = () => {
           d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,181.3C336,149,384,107,432,128C480,149,528,235,576,245.3C624,256,672,192,720,170.7C768,149,816,171,864,197.3C912,224,960,256,1008,250.7C1056,245,1104,203,1152,186.7C1200,171,1248,181,1296,202.7C1344,224,1392,256,1416,272L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
         ></path>
       </svg>
+
     </div>
   );
 };
