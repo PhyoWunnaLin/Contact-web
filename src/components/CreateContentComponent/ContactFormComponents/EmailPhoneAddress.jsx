@@ -10,7 +10,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* Email */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <AiOutlineMail className="text-2xl" />
+          <AiOutlineMail className="text-2xl text-pink-700" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -18,7 +18,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-[300px]  rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-violet-300 outline-none text-blue-950 scale-1 hover:scale-105"
+                className="lg:w-[300px] md:w-[300px] w-[250px]   rounded-lg bg-blue-50 transition-transform px-5 py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                 type="Email"
                 placeholder="Email"
                 required
@@ -31,7 +31,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       <div className=" flex justify-center gap-6 items-center ">
         <div>
           <AiOutlinePhone
-            className=" text-2xl"
+            className=" text-3xl text-pink-700"
             onClick={() => {
               setMoreJob(!moreJob);
               console.log(moreJob);
@@ -44,7 +44,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
               <input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className=" w-[300px]  rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-blue-200 outline-none text-blue-950 scale-1 hover:scale-105"
+                className=" lg:w-[300px] md:w-[300px] w-[250px]   rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                 type="number"
                 placeholder="phone"
                 required
@@ -56,13 +56,13 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* birthday */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <SlCalender className="text-2xl" />
+          <SlCalender className="text-2xl text-pink-700" />
         </div>
         <div>
           <div className=" flex justify-between ">
             <div className="  flex flex-col justify-center items-center gap-4 ">
               <input
-                className="w-[300px]  rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-violet-300 outline-none text-blue-950 scale-1 hover:scale-105"
+                className="lg:w-[300px] md:w-[300px] w-[250px]   rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                 type="text"
                 placeholder="Birthday"
               />
@@ -73,13 +73,13 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* note */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <SlNote className="text-xl" />
+          <SlNote className="text-xl text-pink-700" />
         </div>
         <div>
           <div className=" flex justify-between ">
             <div className="  flex flex-col justify-center items-center gap-4 ">
               <input
-                className="w-[300px]   rounded-lg bg-blue-50 placeholder-blue-200 transition-transform px-6 py-2  outline-none text-blue-950 scale-1 hover:scale-105"
+                className="lg:w-[300px] md:w-[300px] w-[250px]    rounded-lg bg-blue-50 placeholder-violet-300 transition-transform px-6 py-2  outline-none text-violet-800 scale-1 hover:scale-105"
                 type="text"
                 placeholder="Note"
               />

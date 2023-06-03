@@ -17,7 +17,6 @@ const CreateContact = () => {
       <div
         className=" flex  flex-col lg:gap-10 gap-4 md:gap-10
       items-center h-full">
-        {/* <ImagesUpload /> */}
         <ContactForm />
       </div>
     </div>

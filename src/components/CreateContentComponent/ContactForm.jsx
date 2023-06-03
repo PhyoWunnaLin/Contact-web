@@ -17,7 +17,7 @@ const ContactForm = () => {
   const [address, setAddress] = useState("jhjghf");
   const [phone, setPhone] = useState("099897");
   const nav = useNavigate();
-  const [CreateContact, { isLoading}] = useCreateContactMutation();
+  const [CreateContact, { isLoading }] = useCreateContactMutation();
 
   const SubmitHandler = async (e) => {
     e.preventDefault();
@@ -31,15 +31,13 @@ const ContactForm = () => {
       setAddress("");
       setPhone("");
     }
-
-    
   };
 
   return (
     <>
-      <ImagesUpload isLoading={isLoading}/>
-      
-      <div className="bg-[#bde0fe] md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full h-screen  ">
+      <ImagesUpload isLoading={isLoading} />
+
+      <div className="bg-[#bde0fe] md:w-4/6 shadow-lg lg:w-4/6 py-14 flex flex-col   w-full h-screen   ">
         <form
           id="create"
           onSubmit={SubmitHandler}
