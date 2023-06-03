@@ -33,7 +33,7 @@ const UserInfo = () => {
   }
   return (
     <>
-      <div className=" flex justify-center py-16 max-sm:py-0 items-center bg-blue-200 ">
+      <div className=" flex justify-center py-16 max-sm:py-0 sm:bg-blue-200 max-sm:bg-blue-100 ">
         <div className="w-[80%] max-sm:w-[100%] sm:shadow-lg sm:p-5 max-sm:py-5 flex justify-center rounded bg-blue-100 relative py-10">
           <Link to={"/"}>
             <div className=" absolute left-2 top-2 bg-blue-200 font-bold rounded-full p-2  hover:bg-gray-100 hover:shadow duration-500">
@@ -104,7 +104,7 @@ const UserInfo = () => {
                   <p className=" tracking-wide  text-sky-600">{user?.address}</p>
                 </div>
               </div>
-              <div className="xl:w-[40%] w-[100%] flex flex-col gap-3">
+              <div className="xl:w-[40%] w-[100%] flex flex-col gap-3 history">
                 <div className=" flex items-center gap-4">
                   <p className=" text-lg font-medium">History</p>
                   <TbInfoOctagon className=" text-gray-500 text-lg" />
