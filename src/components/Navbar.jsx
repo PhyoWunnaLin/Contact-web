@@ -21,11 +21,11 @@ const Navbar = () => {
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
-              ? "top-4 opacity-100 sm:hidden "
-              : "top-[-100px] opacity-0"
+              ? "top-4 left-4 opacity-100 sm:hidden "
+              : "top-[-100px] left-4 opacity-0"
           }`}
         >
-          <div className={` max-[500px]:w-[250px] max-[460px]:w-[200px] max-[400px]:w-[150px] w-[300px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
+          <div className={` max-[500px]:w-[270px] max-[460px]:w-[200px] w-[300px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
             <AiOutlineSearch className=" text-gray-600 text-[25px] ml-3"></AiOutlineSearch>
             <input onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
                 type="text"
