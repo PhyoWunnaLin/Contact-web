@@ -84,7 +84,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <div className=" flex sm:gap-5 gap-4 items-center">
+          <div className=" flex gap-2 max-[400px]:gap-5  items-center">
             {/* {searchOnclick ? (
               <RxCross2
                 onClick={() => setSearchOnClick(!searchOnclick)}
@@ -100,10 +100,10 @@ const Navbar = () => {
                 } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
               ></AiOutlineSearch>
             {/* )} */}
-            <div className="max-sm:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
+            <div className="max-[400px]:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
             </div>
-            <div className="max-sm:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
+            <div className="max-[400px]:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
               <MdSettings className=" text-[20px] cursor-pointer text-gray-600"></MdSettings>
             </div>
             <div className=" cursor-pointer sm:ml-2 ml-1 bg-[#ff7043] flex justify-center items-center w-[40px] h-[40px] rounded-full border">
