@@ -6,16 +6,23 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./ModalContents.css";
 
-// import FromComputer from "./ModalComponents/FromComputer";
+import FromComputer from "./ModalComponents/FromComputer";
+import { useDispatch } from "react-redux";
+import { setimages } from "../../redux/services/contactSlice";
 
 const ModalContents = ({ close }) => {
-  const [GoToGooglePhotos, setGoToGooglePhotos] = useState(false);
+  const dispatch = useDispatch();
   return (
     <Group className={` w-full   flex flex-col justify-center`}>
       <div className=" flex justify-between w-full ">
         <div className="modalcontentsParents ">
           <div className="modalContentsChild  w-9 h-9 rounded-[50%] flex flex-col justify-center items-center ">
-            <AiOutlineClose onClick={close} />
+            <AiOutlineClose
+              onClick={() => {
+                dispatch(setimages(null));
+                close();
+              }}
+            />
           </div>
         </div>
         <p className=" text-xl">Choose Pictures</p>
@@ -44,7 +51,7 @@ const ModalContents = ({ close }) => {
         </div>
       </div>
 
-      {/* <FromComputer /> */}
+      <FromComputer close={close} />
     </Group>
   );
 };

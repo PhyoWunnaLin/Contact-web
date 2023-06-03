@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import background from "../../assets/rm222batch2-mind-03.jpg";
 import NameInput from "./ContactFormComponents/NameInput";
 // import JobInput from "./contactFormComponents/JobInput";
 import EmailPhoneAddress from "./ContactFormComponents/EmailPhoneAddress";
@@ -36,12 +36,12 @@ const ContactForm = () => {
   return (
     <>
       <ImagesUpload isLoading={isLoading} />
-
-      <div className="bg-[#bde0fe] md:w-4/6 shadow-lg lg:w-4/6 py-14 flex flex-col   w-full h-screen   ">
+      {/* bg-[#bde0fe] */}
+      <div className=" bg-[#a2d2ff] md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full h-screen   ">
         <form
           id="create"
           onSubmit={SubmitHandler}
-          className="w-[50%] flex-grow m-auto flex gap-4 flex-col">
+          className="w-[50%] z-20 flex-grow m-auto flex gap-4 flex-col">
           <NameInput setName={setName} name={name} />
           {/* <JobInput /> */}
           <EmailPhoneAddress
@@ -52,6 +52,11 @@ const ContactForm = () => {
           />
           <OtherContact setAddress={setAddress} address={address} />
         </form>
+        <img
+          src={background}
+          className=" absolute top-0 opacity-25  hidden lg:block "
+          alt=""
+        />
       </div>
     </>
   );
