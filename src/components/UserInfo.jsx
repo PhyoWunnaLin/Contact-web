@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsSendPlusFill } from "react-icons/bs";
 import { AiOutlineStar } from "react-icons/ai";
 import { BiDotsVerticalRounded } from "react-icons/bi";
@@ -20,7 +20,23 @@ const UserInfo = () => {
   const { id } = useParams();
   const token = Cookies.get("token");
   const { data, isLoading } = useGetUserInfoQuery({ id, token });
-  const user = data?.contact;
+  const user = data?.contact; 
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+useEffect(() => {
+  // Update window width on resize
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  // Cleanup the event listener on component unmount
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
 
   if (isLoading) {
     return (
@@ -87,9 +103,15 @@ const UserInfo = () => {
             <div className=" flex max-lg:flex-col max-lg:gap-7 gap-10">
               <div className="flex flex-col gap-3 border border-gray-300 rounded w-[100%] xl:w-[60%] p-3">
                 <h2 className="font-medium text-lg">Contact Detail</h2>
-                <div className="flex gap-3 items-center">
+                <div className="flex gap-3 items-center rounded overflow-hidden whitespace-nowrap text-ellipsis">
                   <MdOutlineMarkEmailRead className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide  text-sky-600">{user?.email}</p>
+                  {user?.email.length >= 20  && windowWidth <= 380 ? (
+                <p className="tracking-wide text-sky-600 max-w-[160px]">
+                  {user?.email.substr(0, 18)}...
+                </p>
+              ) : (
+                <p className="tracking-wide text-sky-600">{user?.email}</p>
+              )}
                 </div>
                 <div className="flex gap-3 items-center">
                   <HiOutlinePhone className=" text-lg text-gray-500" />
