@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../redux/services/contactSlice";
 import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
@@ -22,6 +22,7 @@ const ContactTable = () => {
   const contacts = useSelector((state) => state.contactSlice.contact);
   const searchTerm = useSelector((state) => state.contactSlice.searchTerm);
   const [DeleteContact] = useDeleteContactMutation();
+  const nav = useNavigate();
 
   const deleteHandler = async (id) => {
     Swal.fire({
@@ -135,6 +136,7 @@ const ContactTable = () => {
                 return (
                   // <Link to={`/createContact`}>
                   <tr
+                    onDoubleClick={() => nav(`/info/${contact.id}`)}
                     key={contact.id}
                     className={` border-b-2 border-b-white cursor-pointer ${
                       isHovered === index ? "bg-[#90cdf49f]" : ""
