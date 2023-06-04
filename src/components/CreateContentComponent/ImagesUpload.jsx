@@ -8,30 +8,30 @@ import ModalContents from "./ModalContents";
 import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import {  setimages } from "../../redux/services/contactSlice";
+import { setimages } from "../../redux/services/contactSlice";
 
 const ImagesUpload = ({ isLoading }) => {
   const [profileImage, setProfileImages] = useState("");
   const [error, setError] = useState(true);
   const [opened, { open, close }] = useDisclosure(false);
   const image = useSelector((state) => state.contactSlice.images);
-  const [src,setSrc] = useState("");
+  const [src, setSrc] = useState("");
   const dispatch = useDispatch();
 
   // useEffect(()=>{
   //   dispatch(imageSrc(src))
   // },[src])
 
-  if(image){
+  if (image) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(image[0]);
-    fileReader.addEventListener("load",(e) => {
-              // console.log(e.target.result);
-              let result = e.target.result;
-              if(src != result){
-                setSrc(result)
-              }
-          })
+    fileReader.addEventListener("load", (e) => {
+      // console.log(e.target.result);
+      let result = e.target.result;
+      if (src != result) {
+        setSrc(result);
+      }
+    });
   }
 
   if (isLoading) {
@@ -56,7 +56,7 @@ const ImagesUpload = ({ isLoading }) => {
         centered>
         <ModalContents close={close} />
       </Modal>
-      <div className=" group flex relative">
+      <div className=" w-[73.57px] group flex relative">
         <Link to="/">
           <AiOutlineClose
             onClick={() => dispatch(setimages(null))}
@@ -79,7 +79,11 @@ const ImagesUpload = ({ isLoading }) => {
             //   src={image[0]}
             // />
             // <p>{image[0].name}</p>
-            <img src={src} alt="" className="rounded-[50%] w-[150px] h-[150px] object-cover object-center" />
+            <img
+              src={src}
+              alt=""
+              className="rounded-[50%] w-[150px] h-[150px] object-cover object-center"
+            />
           ) : (
             <LuImagePlus className=" text-2xl text-pink-800" />
           )}
