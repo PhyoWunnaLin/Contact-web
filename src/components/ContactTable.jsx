@@ -89,13 +89,13 @@ const ContactTable = () => {
               <th className=" px-10 py-4  text-sm font-semibold tracking-wide">
                 <span className=" text-gray-600 text-left">Name</span>
               </th>
-              <th className=" px-10  py-4 max-sm:hidden text-sm font-semibold tracking-wide">
+              <th className=" px-10  py-4 max-md:hidden text-sm font-semibold tracking-wide">
                 <span className=" text-gray-600 text-left">Email</span>
               </th>
-              <th className=" px-10 py-4 max-md:hidden text-sm font-semibold tracking-wide">
+              <th className=" px-10 py-4 max-lg:hidden text-sm font-semibold tracking-wide">
                 <span className=" text-gray-600 text-left">Phone Number</span>
               </th>
-              <th className=" px-10 py-4 max-lg:hidden text-sm font-semibold tracking-wide">
+              <th className=" px-10 py-4 max-xl:hidden text-sm font-semibold tracking-wide">
                 <span className=" text-gray-600 text-left">Address</span>
               </th>
               <th className=" px-10 py-4 flex flex-row items-center text-xl gap-3">
@@ -141,7 +141,8 @@ const ContactTable = () => {
                     }  hover:backdrop:blur-sm duration-500`}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}>
-                    <td className=" flex flex-row items-center text-left px-10 py-4 text-sm font-semibold lg:tracking-wide">
+                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide">
+                      <div className="flex flex-row items-center">
                       <img
                         src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
                         className=" md:w-[45px] md:h-[45px] w-[40px] h-[40px] rounded-full"
@@ -150,40 +151,41 @@ const ContactTable = () => {
                       <span className=" text-gray-600 text-sm lg:text-base pl-2 select-none">
                         {contact.name}
                       </span>
+                      </div>
                     </td>
-                    <td className="  text-left px-10 max-sm:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className="  text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.email}
                       </span>
                     </td>
-                    <td className=" text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className=" text-left px-10 max-lg:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.phone}
                       </span>
                     </td>
-                    <td className=" text-left max-lg:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className=" text-left max-xl:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600">{contact.address}</span>
                     </td>
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}>
-                      <span>
+                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center text-xl gap-3`}>
+                      <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
-                      </span>
+                      </p>
                       <Link to={`/info/${contact.id}`}>
-                        <span>
+                        <p>
                           <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
-                        </span>
+                        </p>
                       </Link>
-                      <span>
+                      <p>
                         <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
-                      </span>
-                      <span
+                      </p>
+                      <p
                         className=""
                         onClick={() => deleteHandler(contact?.id)}>
                         <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
-                      </span>
+                      </p>
                     </td>
                   </tr>
                   // </Link>
