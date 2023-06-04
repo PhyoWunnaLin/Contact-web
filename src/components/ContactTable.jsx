@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../redux/services/contactSlice";
 import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
@@ -22,6 +22,7 @@ const ContactTable = () => {
   const contacts = useSelector((state) => state.contactSlice.contact);
   const searchTerm = useSelector((state) => state.contactSlice.searchTerm);
   const [DeleteContact] = useDeleteContactMutation();
+  const navigate = useNavigate();
 
   const deleteHandler = async (id) => {
     Swal.fire({
@@ -39,6 +40,10 @@ const ContactTable = () => {
       }
     });
   };
+
+  const toDetail = (id)=>{
+      navigate(`/info/${id}`)
+  }
 
   useEffect(() => {
     dispatch(addContact(data?.contacts?.data));
@@ -115,7 +120,7 @@ const ContactTable = () => {
           <tbody className=" z-10">
             <tr>
               <td className="px-10 py-4 whitespace-nowrap max-[380px]:px-5">
-                <p className=" text-blue-600 font-bold border">
+                <p className=" text-blue-600 font-bold">
                   CONTACTS ({contacts?.length})
                 </p>
               </td>
@@ -139,6 +144,7 @@ const ContactTable = () => {
                     className={` border-b-2 border-b-white cursor-pointer ${
                       isHovered === index ? "bg-[#90cdf49f]" : ""
                     }  hover:backdrop:blur-sm duration-500`}
+                    onDoubleClick={() => toDetail(contact?.id)}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}>
                     <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[380px]:px-5">
@@ -173,14 +179,14 @@ const ContactTable = () => {
                       <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </p>
+                      <p>
+                        <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
+                      </p>
                       <Link to={`/info/${contact.id}`}>
                         <p>
                           <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
                         </p>
                       </Link>
-                      <p>
-                        <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
-                      </p>
                       <p
                         className=""
                         onClick={() => deleteHandler(contact?.id)}>
