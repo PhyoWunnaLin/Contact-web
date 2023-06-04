@@ -4,8 +4,8 @@ const OtherContact = ({ setAddress, address }) => {
   return (
     <div>
       <div className=" flex justify-center gap-6 items-center">
-        <div >
-          <FaRegAddressCard className=" text-2xl"/>
+        <div>
+          <FaRegAddressCard className=" text-2xl text-pink-600 max-sm:text-xl" />
         </div>
         <div>
           <div className=" flex justify-between">
@@ -13,7 +13,7 @@ const OtherContact = ({ setAddress, address }) => {
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className={` w-[300px]  rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-blue-300 outline-none text-blue-950 scale-1 hover:scale-105`}
+                className={` lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform px-6 py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105`}
                 type="text"
                 placeholder="Address"
               />

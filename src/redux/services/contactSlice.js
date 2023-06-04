@@ -1,23 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    contact: [],
-    searchTerm: ""
-}
+  contact: [],
+  searchTerm: "",
+  images: null,
+};
 export const contactSlice = createSlice({
-    name: "contactSlice",
-    initialState,
-    reducers: {
-       addContact: (state,{payload})=>{
-        state.contact = payload
-       },
+  name: "contactSlice",
+  initialState,
+  reducers: {
+    addContact: (state, { payload }) => {
+      state.contact = payload;
+    },
 
-       setSearchTerm: (state,{payload})=>{
-        state.searchTerm = payload
-       },
+    setSearchTerm: (state, { payload }) => {
+      state.searchTerm = payload;
+    },
+    setimages: (state, { payload }) => {
+      state.images = payload;
+    },
+  },
+});
 
-    }
-})
-
-export const {addContact, setSearchTerm} = contactSlice.actions
-export default contactSlice.reducer
+export const { addContact, setSearchTerm, setimages } = contactSlice.actions;
+export default contactSlice.reducer;

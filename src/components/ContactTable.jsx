@@ -14,7 +14,6 @@ import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
   const token = Cookies.get("token");
@@ -36,7 +35,7 @@ const ContactTable = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        const {data} = await DeleteContact({token,id});
+        const { data } = await DeleteContact({ token, id });
       }
     });
   };
@@ -59,15 +58,13 @@ const ContactTable = () => {
         <button
           type="button"
           className=" bg-blue-400 px-4 py-1 rounded shadow-md flex items-center gap-2 text-white font-bold text-xl tracking-wider"
-          disabled
-        >
+          disabled>
           <svg
             aria-hidden="true"
             className="w-6 h-6 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
             viewBox="0 0 100 101"
             fillOpacity="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
               fillOpacity="currentColor"
@@ -117,8 +114,10 @@ const ContactTable = () => {
           </thead>
           <tbody className=" z-10">
             <tr>
-              <td className="px-10 py-4">
-                <span className=" text-blue-600 font-bold">CONTACTS ({contacts?.length})</span>
+              <td className="px-10 py-4 whitespace-nowrap">
+                <p className=" text-blue-600 font-bold border">
+                  CONTACTS ({contacts?.length})
+                </p>
               </td>
             </tr>
 
@@ -141,8 +140,7 @@ const ContactTable = () => {
                       isHovered === index ? "bg-[#90cdf49f]" : ""
                     }  hover:backdrop:blur-sm duration-500`}
                     onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                  >
+                    onMouseLeave={handleMouseLeave}>
                     <td className=" flex flex-row items-center text-left px-10 py-4 text-sm font-semibold lg:tracking-wide">
                       <img
                         src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
@@ -169,8 +167,7 @@ const ContactTable = () => {
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}
-                    >
+                      }  group text-gray-600 relative bottom-2 border-3 border-black text-left px-10 py-4 flex flex-row items-center text-xl gap-3`}>
                       <span>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </span>
@@ -184,14 +181,12 @@ const ContactTable = () => {
                       </span>
                       <span
                         className=""
-                        onClick={() => deleteHandler(contact?.id)}
-                      >
+                        onClick={() => deleteHandler(contact?.id)}>
                         <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
                       </span>
                     </td>
                   </tr>
                   // </Link>
-
                 );
               })}
           </tbody>
@@ -200,15 +195,12 @@ const ContactTable = () => {
       <svg
         className="  fixed left-0 bottom-0"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
+        viewBox="0 0 1440 320">
         <path
           fill="#a2d9ff"
           fillOpacity="1"
-          d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,181.3C336,149,384,107,432,128C480,149,528,235,576,245.3C624,256,672,192,720,170.7C768,149,816,171,864,197.3C912,224,960,256,1008,250.7C1056,245,1104,203,1152,186.7C1200,171,1248,181,1296,202.7C1344,224,1392,256,1416,272L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
-        ></path>
+          d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,181.3C336,149,384,107,432,128C480,149,528,235,576,245.3C624,256,672,192,720,170.7C768,149,816,171,864,197.3C912,224,960,256,1008,250.7C1056,245,1104,203,1152,186.7C1200,171,1248,181,1296,202.7C1344,224,1392,256,1416,272L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
       </svg>
-
     </div>
   );
 };
