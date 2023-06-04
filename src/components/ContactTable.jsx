@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../redux/services/contactSlice";
 import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link, useNavigate, } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
