@@ -98,7 +98,7 @@ const ContactTable = () => {
               <th className=" px-10 py-4 max-xl:hidden text-sm font-semibold tracking-wide max-[380px]:px-5">
                 <span className=" text-gray-600 text-left">Address</span>
               </th>
-              <th className=" px-10 py-4 flex flex-row items-center text-xl gap-3 max-[380px]:px-5">
+              <th className=" px-10 py-4 flex flex-row items-center justify-end text-xl gap-3 max-[380px]:px-5">
                 <span>
                   <HiPrinter className=" relative top-[2px] text-gray-600"></HiPrinter>
                 </span>
@@ -169,7 +169,7 @@ const ContactTable = () => {
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center text-xl gap-3 max-[380px]:px-5`}>
+                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center justify-end text-xl gap-3 max-[380px]:px-5`}>
                       <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </p>
