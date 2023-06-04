@@ -26,7 +26,7 @@ const ContactForm = () => {
 
     const refreshPage = () => {
       window.location.reload();
-    }
+    };
 
     if (data?.data?.success) {
       nav("/");
@@ -46,7 +46,7 @@ const ContactForm = () => {
         <form
           id="create"
           onSubmit={SubmitHandler}
-          className="w-[50%] z-20 flex-grow m-auto flex gap-4 flex-col">
+          className="w-[50%] z-20 flex-grow m-auto flex gap-4 flex-col justify-center">
           <NameInput setName={setName} name={name} />
           {/* <JobInput /> */}
           <EmailPhoneAddress
