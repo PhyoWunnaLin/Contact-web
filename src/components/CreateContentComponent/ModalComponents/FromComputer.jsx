@@ -2,13 +2,19 @@ import React, { useEffect, useId, useState } from "react";
 
 import { useRef } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setimages } from "../../../redux/services/contactSlice";
+import Cookies from "js-cookie";
+
 const fileTypes = ["JPG", "PNG", "GIF"];
 const FromComputer = ({ close }) => {
   const [file, setFile] = useState(null);
   const input = useRef();
   const dispatch = useDispatch();
+  // const src = Cookies.get("src")
+  // console.log(src);
+
+  // const src = useSelector(state => console.log(state.contactSlice.imageSrc))
 
   const handleDragOver = (event) => {
     event.preventDefault();
@@ -28,6 +34,7 @@ const FromComputer = ({ close }) => {
       <div className="h-[350px] flex flex-col justify-center items-center gap-10">
         <img
           src="https://img.freepik.com/free-vector/doodle-hand-drawn-cartoon-cute-girl-student-thinking-with-bubble-have-idea-dreaming_40876-3274.jpg?w=740&t=st=1685813059~exp=1685813659~hmac=0ba2e5216ab30ead759d0995fa99eee7fdb48ad1d8fb9ec46afec7d3c2324eed"
+          // src={src}
           alt=""
           className="w-60 h-60  rounded-[50%]"
         />
