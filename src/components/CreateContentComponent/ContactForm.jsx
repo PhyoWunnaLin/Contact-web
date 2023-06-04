@@ -24,12 +24,17 @@ const ContactForm = () => {
     const contact = { name, email, address, phone };
     const data = await CreateContact({ token, contact });
 
+    const refreshPage = () => {
+      window.location.reload();
+    }
+
     if (data?.data?.success) {
       nav("/");
       setName("");
       setEmail("");
       setAddress("");
       setPhone("");
+      refreshPage();
     }
   };
 
