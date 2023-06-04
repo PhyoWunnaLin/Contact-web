@@ -82,7 +82,7 @@ const ContactTable = () => {
 
   return (
     <div className=" bg-blue-100">
-      <div className=" relative z-10 ">
+      <div className=" relative z-10 overflow-hidden ">
         <table className=" w-full">
           <thead className=" border-b-2 border-b-white text-left">
             <tr className="">
@@ -141,35 +141,35 @@ const ContactTable = () => {
                     }  hover:backdrop:blur-sm duration-500`}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}>
-                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide">
+                    <td className=" text-left lg:px-10 md:px-10 px-5 py-4 text-sm font-semibold lg:tracking-wide">
                       <div className="flex flex-row items-center">
-                      <img
-                        src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-                        className=" md:w-[45px] md:h-[45px] w-[40px] h-[40px] rounded-full"
-                        alt=""
-                      />
-                      <span className=" text-gray-600 text-sm lg:text-base pl-2 select-none">
-                        {contact.name}
-                      </span>
+                        <img
+                          src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                          className=" md:w-[45px] md:h-[45px] w-[40px] h-[40px] rounded-full"
+                          alt=""
+                        />
+                        <span className=" text-gray-600 text-sm lg:text-base pl-2 select-none">
+                          {contact.name}
+                        </span>
                       </div>
                     </td>
-                    <td className="  text-left px-10 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className="  text-left lg:px-10 md:px-10 px-5 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.email}
                       </span>
                     </td>
-                    <td className=" text-left px-10 max-lg:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className=" text-left lg:px-10 md:px-10 px-5 max-lg:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600 text-sm lg:text-base">
                         {contact.phone}
                       </span>
                     </td>
-                    <td className=" text-left max-xl:hidden px-10 py-4  text-sm font-semibold lg:tracking-wide select-none">
+                    <td className=" text-left max-xl:hidden lg:px-10 md:px-10 px-5 py-4  text-sm font-semibold lg:tracking-wide select-none">
                       <span className=" text-gray-600">{contact.address}</span>
                     </td>
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center text-xl gap-3`}>
+                      }  group text-gray-600 text-left lg:px-10 md:px-10 px-5 py-10 flex flex-row items-center text-xl gap-3`}>
                       <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </p>
