@@ -10,7 +10,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* Email */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <AiOutlineMail className="text-2xl text-pink-700" />
+          <AiOutlineMail className="text-2xl text-pink-700 max-sm:text-xl" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -31,7 +31,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       <div className=" flex justify-center gap-6 items-center ">
         <div>
           <AiOutlinePhone
-            className=" text-3xl text-pink-700"
+            className=" text-3xl text-pink-700 max-sm:text-2xl"
             onClick={() => {
               setMoreJob(!moreJob);
               console.log(moreJob);
@@ -56,7 +56,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* birthday */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <SlCalender className="text-2xl text-pink-700" />
+          <SlCalender className="text-2xl text-pink-700 max-sm:text-xl" />
         </div>
         <div>
           <div className=" flex justify-between ">
@@ -73,7 +73,7 @@ const EmailPhoneAddress = ({ setEmail, setPhone, email, phone }) => {
       {/* note */}
       <div className=" flex justify-center gap-6 items-center ">
         <div>
-          <SlNote className="text-xl text-pink-700" />
+          <SlNote className="text-2xl text-pink-700 max-sm:text-xl" />
         </div>
         <div>
           <div className=" flex justify-between ">

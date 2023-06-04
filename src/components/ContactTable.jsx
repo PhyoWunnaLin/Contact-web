@@ -114,10 +114,10 @@ const ContactTable = () => {
           </thead>
           <tbody className=" z-10">
             <tr>
-              <td className="px-10 py-4">
-                <span className=" text-blue-600 font-bold">
+              <td className="px-10 py-4 whitespace-nowrap">
+                <p className=" text-blue-600 font-bold border">
                   CONTACTS ({contacts?.length})
-                </span>
+                </p>
               </td>
             </tr>
 

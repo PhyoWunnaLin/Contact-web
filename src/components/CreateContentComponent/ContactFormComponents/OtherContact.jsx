@@ -5,7 +5,7 @@ const OtherContact = ({ setAddress, address }) => {
     <div>
       <div className=" flex justify-center gap-6 items-center">
         <div>
-          <FaRegAddressCard className=" text-2xl text-pink-600" />
+          <FaRegAddressCard className=" text-2xl text-pink-600 max-sm:text-xl" />
         </div>
         <div>
           <div className=" flex justify-between">

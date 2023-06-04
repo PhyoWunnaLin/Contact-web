@@ -54,7 +54,7 @@ const FromComputer = ({ close }) => {
         className="dropzone h-[350px] flex flex-col justify-center items-center gap-3"
         onDragOver={handleDragOver}
         onDrop={handleDrop}>
-        <div className="w-60 h-60 border-violet-100 shadow border-2 rounded-[50%] flex flex-start justify-center items-center">
+        <div className="w-60 h-60 max-sm:w-48 max-sm:h-48 border-violet-100 shadow border-2 rounded-[50%] flex flex-start justify-center items-center">
           <img
             src="https://img.freepik.com/premium-vector/business-women-worker-character-hand-drawn-cartoon-vector-art-illustration_56104-2182.jpg?w=740"
             alt=""

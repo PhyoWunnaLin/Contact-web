@@ -50,7 +50,7 @@ const ImagesUpload = ({ isLoading }) => {
         </span>
       </div>
 
-      <div className=" ">
+      <div className=" cursor-pointer ">
         <div
           onClick={open}
           className=" bg-blue-100 rounded-[50%] w-[150px] h-[150px] flex justify-center items-center align-middle flex-col">

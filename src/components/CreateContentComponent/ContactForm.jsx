@@ -37,7 +37,7 @@ const ContactForm = () => {
     <>
       <ImagesUpload isLoading={isLoading} />
       {/* bg-[#bde0fe] */}
-      <div className=" bg-[#a2d2ff] md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full h-screen   ">
+      <div className=" bg-[#a2d2ff] md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full h-screen ">
         <form
           id="create"
           onSubmit={SubmitHandler}

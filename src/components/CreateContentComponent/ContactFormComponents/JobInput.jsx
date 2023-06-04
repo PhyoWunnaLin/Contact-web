@@ -5,7 +5,7 @@ const JobInput = () => {
   return (
     <div className=" flex justify-around">
       <div>
-        <SlCalender
+        <SlCalender 
           onClick={() => {
             setMore(!more);
             console.log(more);
