@@ -15,6 +15,17 @@ const ImagesUpload = ({ isLoading }) => {
   const [error, setError] = useState(true);
   const [opened, { open, close }] = useDisclosure(false);
   const image = useSelector((state) => state.contactSlice.images);
+  const [src,setSrc] = useState("")
+
+  if(image ){
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(image[0]);
+    fileReader.addEventListener("load",(e) => {
+              // console.log(e.target.result);
+              let result = e.target.result;
+              setSrc(result)
+          })
+  }
   const dispatch = useDispatch();
   if (isLoading) {
     toast("working...", {
@@ -60,7 +71,8 @@ const ImagesUpload = ({ isLoading }) => {
             //   className=" rounded"
             //   src={image[0]}
             // />
-            <p>{image[0].name}</p>
+            // <p>{image[0].name}</p>
+            <img src={src} alt="" className="rounded-[50%] w-[150px] h-[150px] object-cover object-center" />
           ) : (
             <LuImagePlus className=" text-2xl text-pink-800" />
           )}
