@@ -91,19 +91,19 @@ const ContactTable = () => {
         <table className=" w-full">
           <thead className=" border-b-2 border-b-white text-left">
             <tr className="">
-              <th className=" px-10 py-4  text-sm font-semibold tracking-wide max-[400px]:px-5">
+              <th className=" px-10 py-4  text-sm font-semibold tracking-wide max-[420px]:px-5">
                 <span className=" text-gray-600 text-left">Name</span>
               </th>
-              <th className=" px-10  py-4 max-md:hidden text-sm font-semibold tracking-wide max-[400px]:px-5">
+              <th className=" px-10  py-4 max-md:hidden text-sm font-semibold tracking-wide max-[420px]:px-5">
                 <span className=" text-gray-600 text-left">Email</span>
               </th>
-              <th className=" px-10 py-4 max-lg:hidden text-sm font-semibold tracking-wide max-[400px]:px-5">
+              <th className=" px-10 py-4 max-lg:hidden text-sm font-semibold tracking-wide max-[420px]:px-5">
                 <span className=" text-gray-600 text-left">Phone Number</span>
               </th>
-              <th className=" px-10 py-4 max-xl:hidden text-sm font-semibold tracking-wide max-[400px]:px-5">
+              <th className=" px-10 py-4 max-xl:hidden text-sm font-semibold tracking-wide max-[420px]:px-5">
                 <span className=" text-gray-600 text-left">Address</span>
               </th>
-              <th className=" px-10 py-4 flex flex-row items-center justify-end text-xl gap-3 max-[400px]:px-5">
+              <th className=" px-10 py-4 flex flex-row items-center justify-end text-xl gap-3 max-[420px]:px-5">
                 <span>
                   <HiPrinter className=" relative top-[2px] text-gray-600"></HiPrinter>
                 </span>
@@ -119,7 +119,7 @@ const ContactTable = () => {
           </thead>
           <tbody className=" z-10">
             <tr>
-              <td className="px-10 py-4 whitespace-nowrap max-[400px]:px-5">
+              <td className="px-10 py-4 whitespace-nowrap max-[420px]:px-5">
                 <p className=" text-blue-600 font-bold">
                   CONTACTS ({contacts?.length})
                 </p>
@@ -147,7 +147,7 @@ const ContactTable = () => {
                     onDoubleClick={() => toDetail(contact?.id)}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}>
-                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[400px]:px-5">
+                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[420px]:px-5">
                       <div className="flex flex-row items-center">
                       <img
                         src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
@@ -175,7 +175,7 @@ const ContactTable = () => {
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center justify-end text-xl gap-3 max-[400px]:px-5`}>
+                      }  group text-gray-600 text-left px-10 py-10 flex flex-row items-center justify-end text-xl gap-3 max-[420px]:px-5`}>
                       <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </p>
