@@ -17,10 +17,6 @@ const ImagesUpload = ({ isLoading }) => {
   const image = useSelector((state) => state.contactSlice.images);
 
   const dispatch = useDispatch();
-  console.log(image);
-  // useEffect(()=>{
-  //   dispatch(imageSrc(src))
-  // },[src])
 
   if (isLoading) {
     toast("working...", {

@@ -179,9 +179,11 @@ const ContactTable = () => {
                       <p>
                         <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
                       </p>
-                      <p>
-                        <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
-                      </p>
+                      <Link to={`/editInfo/${contact.id}`}>
+                        <p>
+                          <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
+                        </p>
+                      </Link>
                       <Link to={`/info/${contact.id}`}>
                         <p>
                           <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Cookies from "js-cookie";
+
 const initialState = {
   contact: [],
   searchTerm: "",

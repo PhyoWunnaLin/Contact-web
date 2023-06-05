@@ -11,30 +11,30 @@ import { LuCake } from "react-icons/lu";
 import { FaRegAddressCard } from "react-icons/fa";
 import { TbInfoOctagon } from "react-icons/tb";
 import { BsArrowLeft } from "react-icons/bs";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useGetUserInfoQuery } from "../redux/api/contactApi";
-import '../css/user.css';
+import "../css/user.css";
 
 const UserInfo = () => {
   const { id } = useParams();
   const token = Cookies.get("token");
   const { data, isLoading } = useGetUserInfoQuery({ id, token });
-  const user = data?.contact; 
-
+  const user = data?.contact;
+  const nav = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-useEffect(() => {
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-  window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   if (isLoading) {
     return (
@@ -75,7 +75,11 @@ useEffect(() => {
                 <div className="flex gap-3 items-center">
                   <AiOutlineStar />
                   <BiDotsVerticalRounded />
-                  <button className=" bg-teal-600 px-3 py-1 font-medium rounded text-white hover:bg-teal-700 hover:shadow-md duration-500">
+                  <button
+                    onClick={() => {
+                      if (user) nav("/createContact");
+                    }}
+                    className=" bg-teal-600 px-3 py-1 font-medium rounded text-white hover:bg-teal-700 hover:shadow-md duration-500">
                     Edit
                   </button>
                 </div>
@@ -103,13 +107,13 @@ useEffect(() => {
                 <h2 className="font-medium text-lg">Contact Detail</h2>
                 <div className="flex gap-3 items-center rounded overflow-hidden whitespace-nowrap text-ellipsis">
                   <MdOutlineMarkEmailRead className=" text-lg text-gray-500" />
-                  {user?.email.length >= 20  && windowWidth <= 380 ? (
-                <p className="tracking-wide text-sky-600 max-w-[160px]">
-                  {user?.email.substr(0, 18)}...
-                </p>
-              ) : (
-                <p className="tracking-wide text-sky-600">{user?.email}</p>
-              )}
+                  {user?.email.length >= 20 && windowWidth <= 380 ? (
+                    <p className="tracking-wide text-sky-600 max-w-[160px]">
+                      {user?.email.substr(0, 18)}...
+                    </p>
+                  ) : (
+                    <p className="tracking-wide text-sky-600">{user?.email}</p>
+                  )}
                 </div>
                 <div className="flex gap-3 items-center">
                   <HiOutlinePhone className=" text-lg text-gray-500" />
@@ -117,11 +121,15 @@ useEffect(() => {
                 </div>
                 <div className="flex gap-3 items-center">
                   <LuCake className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide  text-sky-600">December 19,1992</p>
+                  <p className=" tracking-wide  text-sky-600">
+                    December 19,1992
+                  </p>
                 </div>
                 <div className="flex gap-3 items-center">
                   <FaRegAddressCard className=" text-lg text-gray-500" />
-                  <p className=" tracking-wide  text-sky-600">{user?.address}</p>
+                  <p className=" tracking-wide  text-sky-600">
+                    {user?.address}
+                  </p>
                 </div>
               </div>
               <div className="xl:w-[40%] w-[100%] flex flex-col gap-3 history">
