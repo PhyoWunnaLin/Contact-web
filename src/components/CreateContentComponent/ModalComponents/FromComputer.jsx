@@ -4,17 +4,26 @@ import { useRef } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setimages } from "../../../redux/services/contactSlice";
-import Cookies from "js-cookie";
 
 const fileTypes = ["JPG", "PNG", "GIF"];
 const FromComputer = ({ close }) => {
   const [file, setFile] = useState(null);
   const input = useRef();
+  const [src, setSrc] = useState("");
   const dispatch = useDispatch();
-  // const src = Cookies.get("src")
-  // console.log(src);
 
-  // const src = useSelector(state => console.log(state.contactSlice.imageSrc))
+  if (file) {
+    const blob = new Blob(file);
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(blob);
+    fileReader.addEventListener("load", (e) => {
+      // console.log(e.target.result);
+      let result = e.target.result;
+      if (src != result) {
+        setSrc(result);
+      }
+    });
+  }
 
   const handleDragOver = (event) => {
     event.preventDefault();
@@ -26,17 +35,16 @@ const FromComputer = ({ close }) => {
   };
 
   const uploadedHandler = () => {
-    dispatch(setimages(file));
+    dispatch(setimages(src));
     close();
   };
   if (file)
     return (
       <div className="h-[350px] flex flex-col justify-center items-center gap-10">
         <img
-          src="https://img.freepik.com/free-vector/doodle-hand-drawn-cartoon-cute-girl-student-thinking-with-bubble-have-idea-dreaming_40876-3274.jpg?w=740&t=st=1685813059~exp=1685813659~hmac=0ba2e5216ab30ead759d0995fa99eee7fdb48ad1d8fb9ec46afec7d3c2324eed"
-          // src={src}
+          src={src}
           alt=""
-          className="w-60 h-60  rounded-[50%]"
+          className="rounded-[50%] w-[150px] h-[150px] object-cover object-center"
         />
 
         <div className=" flex gap-10 text-gray-500">
@@ -67,7 +75,7 @@ const FromComputer = ({ close }) => {
             alt=""
             className=" w-[50%]"
           />
-          <h1 className="text-center">
+          <h1 className="text-center text-gray-500">
             Drag <br />& <br /> Drop
           </h1>
         </div>

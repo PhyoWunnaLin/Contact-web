@@ -26,7 +26,7 @@ const ContactForm = () => {
 
     const refreshPage = () => {
       window.location.reload();
-    }
+    };
 
     if (data?.data?.success) {
       nav("/");
@@ -42,11 +42,11 @@ const ContactForm = () => {
     <>
       <ImagesUpload isLoading={isLoading} />
       {/* bg-[#bde0fe] */}
-      <div className=" bg-[#a2d2ff] md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full h-screen ">
+      <div className=" bg-[#a2d2ff] md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-4/6 py-14 flex flex-col   w-full ">
         <form
           id="create"
           onSubmit={SubmitHandler}
-          className="w-[50%] z-20 flex-grow m-auto flex gap-4 flex-col">
+          className="w-[50%] z-20 flex-grow m-auto flex gap-4 flex-col justify-center">
           <NameInput setName={setName} name={name} />
           {/* <JobInput /> */}
           <EmailPhoneAddress

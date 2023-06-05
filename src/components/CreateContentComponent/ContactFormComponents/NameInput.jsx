@@ -8,9 +8,9 @@ const NameInput = ({ setName, name }) => {
   return (
     <div className=" flex gap-3 flex-col">
       <div className="flex justify-center items-start gap-6  ">
-        <div className="">
+        <div className="max-[280px]:hidden">
           <BsPeople
-            className=" text-2xl text-pink-700 max-sm:text-xl"
+            className=" text-2xl text-pink-700 max-sm:text-xl "
             onClick={() => {
               setMore(!more);
             }}
@@ -24,7 +24,7 @@ const NameInput = ({ setName, name }) => {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
-                className="lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform px-6  py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
+                className="lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform  px-6  py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                 type="text"
                 placeholder="First Name"
                 required

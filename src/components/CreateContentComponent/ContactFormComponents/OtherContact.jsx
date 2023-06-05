@@ -4,7 +4,7 @@ const OtherContact = ({ setAddress, address }) => {
   return (
     <div>
       <div className=" flex justify-center gap-6 items-center">
-        <div>
+        <div className=" max-[280px]:hidden">
           <FaRegAddressCard className=" text-2xl text-pink-600 max-sm:text-xl" />
         </div>
         <div>
