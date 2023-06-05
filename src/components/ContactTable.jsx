@@ -147,7 +147,7 @@ const ContactTable = () => {
                     onDoubleClick={() => toDetail(contact?.id)}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}>
-                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[380px]:px-5">
+                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[420px]:px-5">
                       <div className="flex flex-row items-center">
                         <img
                           src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
