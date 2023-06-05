@@ -75,13 +75,11 @@ const UserInfo = () => {
                 <div className="flex gap-3 items-center">
                   <AiOutlineStar />
                   <BiDotsVerticalRounded />
-                  <button
-                    onClick={() => {
-                      if (user) nav("/createContact");
-                    }}
-                    className=" bg-teal-600 px-3 py-1 font-medium rounded text-white hover:bg-teal-700 hover:shadow-md duration-500">
-                    Edit
-                  </button>
+                  <Link to={`/editInfo/${id}`}>
+                    <button className=" bg-teal-600 px-3 py-1 font-medium rounded text-white hover:bg-teal-700 hover:shadow-md duration-500">
+                      Edit
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

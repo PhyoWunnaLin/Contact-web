@@ -39,6 +39,7 @@ const EditInfo = () => {
   const [updateAddress, setUpdateAddress] = useState("");
   const [updatePhone, setUpdatePhone] = useState("");
 
+  const [errormessage, setErrorMessage] = useState(null);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const EditInfo = () => {
       window.location.reload();
     };
 
-    console.log(contact);
+    // console.log(contact);
 
     if (data?.data?.success) {
       nav("/");
@@ -74,8 +75,12 @@ const EditInfo = () => {
       setUpdateAddress("");
       setUpdatePhone("");
       refreshPage();
+      setErrorMessage(null);
+    } else {
+      setErrorMessage(data?.error.data.message);
     }
   };
+  // console.log(errormessage);
   if (user) {
     return (
       <>
@@ -174,13 +179,19 @@ const EditInfo = () => {
                               value={updateName}
                               onChange={(e) => {
                                 setupdateName(e.target.value);
-                                console.log(updateName);
+                                setErrorMessage(null);
                               }}
                               className="lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform  px-6  py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                               type="text"
                               placeholder="First Name"
                               required
                             />
+                            <small
+                              className={`${
+                                errormessage ? "block" : "hidden"
+                              } text-red-600`}>
+                              {errormessage}
+                            </small>
                           </div>
                         </div>
                       </div>
