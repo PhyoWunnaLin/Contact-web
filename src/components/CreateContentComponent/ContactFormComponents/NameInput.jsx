@@ -24,7 +24,7 @@ const NameInput = ({ setName, name }) => {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
-                className="lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform px-6  py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
+                className="lg:w-[300px] md:w-[300px] w-[250px]  rounded-lg bg-blue-50 transition-transform  px-6  py-2 placeholder-violet-300 outline-none text-violet-800 scale-1 hover:scale-105"
                 type="text"
                 placeholder="First Name"
                 required
