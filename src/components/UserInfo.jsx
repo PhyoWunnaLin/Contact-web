@@ -57,7 +57,7 @@ const UserInfo = () => {
           <div className="w-[80%] lg:w-[95%] flex flex-col py-5 gap-10">
             <div className=" p-1 flex max-md:flex-col justify-between items-center gap-8">
               <div className="flex max-md:flex-col items-center gap-4">
-                <div className=" p-12 bg-cyan-700 w-40 max-sm:w-32 max-sm:p-8 flex justify-center items-center rounded-full">
+                <div className=" w-[170px] h-[170px] max-sm:w-[150px] max-sm:h-[150px] bg-cyan-700 flex justify-center items-center rounded-full">
                   <p className=" text-6xl font-medium text-white ">
                     {user?.name.substr(0, 1).toUpperCase()}
                   </p>
