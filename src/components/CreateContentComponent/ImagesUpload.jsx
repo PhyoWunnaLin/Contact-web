@@ -44,12 +44,12 @@ const ImagesUpload = ({ isLoading }) => {
         centered>
         <ModalContents close={close} />
       </Modal>
-      <div className="md:flex lg:flex flex-col-reverse w-[2%] min-[540px]:w-auto lg:w-auto md:w-auto">
+      <div className="md:flex lg:flex flex-col-reverse w-[26%] min-[540px]:w-auto lg:w-auto md:w-auto">
         <button
           disabled={isLoading && true}
           form="create"
           type="submit"
-          className=" bg-violet-300 shadow font-semibold   hover:bg-violet-300 hover:shadow-md hover:shadow-violet-400 active:bg-violet-600 px-5 sm:px-7 py-1 rounded text-violet-800">
+          className=" bg-violet-300 shadow font-semibold    hover:bg-violet-300 hover:shadow-md hover:shadow-violet-400 active:bg-violet-600 px-5 sm:px-7 py-1 rounded text-violet-800">
           Save
         </button>
       </div>

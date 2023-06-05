@@ -75,7 +75,7 @@ const FromComputer = ({ close }) => {
             alt=""
             className=" w-[50%]"
           />
-          <h1 className="text-center">
+          <h1 className="text-center text-gray-500">
             Drag <br />& <br /> Drop
           </h1>
         </div>
