@@ -8,9 +8,9 @@ const NameInput = ({ setName, name }) => {
   return (
     <div className=" flex gap-3 flex-col">
       <div className="flex justify-center items-start gap-6  ">
-        <div className="">
+        <div className="max-[280px]:hidden">
           <BsPeople
-            className=" text-2xl text-pink-700 max-sm:text-xl"
+            className=" text-2xl text-pink-700 max-sm:text-xl "
             onClick={() => {
               setMore(!more);
             }}
