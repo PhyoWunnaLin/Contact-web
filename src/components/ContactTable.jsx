@@ -1,5 +1,5 @@
 import { HiPrinter } from "react-icons/hi";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiImport, CiExport } from "react-icons/ci";
 import Cookies from "js-cookie";
@@ -23,6 +23,7 @@ const ContactTable = () => {
   const searchTerm = useSelector((state) => state.contactSlice.searchTerm);
   const [DeleteContact] = useDeleteContactMutation();
   const navigate = useNavigate();
+  const [star,setStar] = useState(true);
 
   const deleteHandler = async (id) => {
     Swal.fire({
@@ -177,7 +178,10 @@ const ContactTable = () => {
                         isHovered === index ? "block" : "invisible"
                       }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}>
                       <p>
-                        <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
+                        {star ? 
+                        (<AiFillStar className={` cursor-pointer text-blue-600 `}></AiFillStar>):
+                        (<AiOutlineStar className={` cursor-pointer hover:text-gray-800 `}></AiOutlineStar>)
+                        }
                       </p>
                       <Link to={`/editInfo/${contact.id}`}>
                         <p>

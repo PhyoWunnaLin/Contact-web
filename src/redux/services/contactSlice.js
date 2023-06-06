@@ -4,6 +4,8 @@ const initialState = {
   contact: [],
   searchTerm: "",
   images: null,
+  starredContacts: []
+
 };
 export const contactSlice = createSlice({
   name: "contactSlice",
@@ -19,8 +21,13 @@ export const contactSlice = createSlice({
     setimages: (state, { payload }) => {
       state.images = payload;
     },
+
+    addStarredContacts: (state,{payload}) => {
+      state.starredContacts = payload;
+    }
+  
   },
 });
 
-export const { addContact, setSearchTerm, setimages } = contactSlice.actions;
+export const { addContact, setSearchTerm, setimages, addStarredContacts } = contactSlice.actions;
 export default contactSlice.reducer;
