@@ -92,12 +92,12 @@ const ContactTable = () => {
     return (
       <div className="pt-20 flex flex-col gap-3 justify-center items-center h-screen">
         <img
-          src="https://i.pinimg.com/564x/be/11/72/be1172fdef15e6561848c206cf1a83f5.jpg"
-          className="w-[200px] h-[200px]"
+          src="https://i.pinimg.com/564x/7d/97/ae/7d97aeef0d9384c494a755a5d0fa8a43.jpg"
+          className="w-[250px] h-[200px]"
         />
         <p className=" font-medium text-lg">No contacts yet</p>
         <Link to={'/createContact'}>
-          <div className=" flex justify-center items-center gap-3 px-5 py-1 bg-sky-50 duration-500 rounded text-sky-400 hover:bg-sky-100 hover:text-sky-500">
+          <div className=" flex justify-center items-center gap-3 px-5 py-1 bg-sky-100 duration-500 rounded text-sky-500 hover:bg-sky-200 hover:text-sky-600">
             <FaRegUser />
             <p className=" font-medium">Create Contact</p>
           </div>

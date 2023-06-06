@@ -11,7 +11,7 @@ import ContactTable from "./ContactTable";
 import { useLogoutMutation } from "../redux/api/authApi";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { removeUserFromCookie } from "../redux/services/authSlice";
 import { Loader } from "@mantine/core";
 
@@ -22,6 +22,7 @@ const Sidebar = ({ open,setOpen }) => {
   const token = Cookies.get("token");
   const nav = useNavigate();
   const dispatch = useDispatch();
+  const contacts = useSelector((state) => state.contactSlice.contact);
 
   const logoutHandler = async () => {
     const { data } = await logout(token);
@@ -60,6 +61,7 @@ const Sidebar = ({ open,setOpen }) => {
           >
             <TiUser className=" mr-4" />
             Contact
+            {contacts?.length > 0 ? <span className=" ml-20">{contacts?.length}</span> : ""}
           </p>
           <p
             onClick={() => setActive("frequent")}
@@ -115,11 +117,16 @@ const Sidebar = ({ open,setOpen }) => {
               className="flex items-center shadow hover:shadow-md bg-white hover:bg-red-50 hover:text-red-500  duration-500  text-gray-700 px-5 py-1 rounded-3xl border"
             >
               {isLoading ? (
-                <Loader color="red" size="xs" className="mr-4" />
+                <div className="flex items-center text-red-500">
+                  <Loader color="red" size="xs" className="mr-4" />
+                  <p>Log Out</p>
+                </div>
               ) : (
-                <MdOutlineLogout className=" mr-4" />
+                <div className="flex items-center">
+                  <MdOutlineLogout className=" mr-4" />
+                  <p>Log Out</p>
+                </div>
               )}
-              Log Out
             </button>
           </div>
         </div>

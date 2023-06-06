@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
 import { setSearchTerm } from "../redux/services/contactSlice";
 import Cookies from "js-cookie";
-import { BsFillSendPlusFill } from "react-icons/bs";
+import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -16,6 +16,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const user = JSON.parse(Cookies.get("user"));
+  const contacts = useSelector((state) => state.contactSlice.contact);
+
   // console.log(user)
   return (
     <>
@@ -120,17 +122,19 @@ const Navbar = () => {
         </div>
       </div>
       <Sidebar open={open} setOpen={setOpen} />
-      <Link to={'/createContact'}> 
-        <button
-          className={`fixed text-2xl text-cyan-500 px-4 bg-gray-100 py-4 shadow-md rounded-full hover:bg-gray-200 hover:text-cyan-600 duration-500 transition-all ease-in z-50 ${
-            open
-              ? " right-[-50px] bottom-5 opacity-0"
-              : " right-5 bottom-5 opacity-100"
-          }`}
-        >
-          <BsFillSendPlusFill />
-        </button>
-      </Link>
+      {contacts?.length > 0 ? (
+        <Link to={"/createContact"}>
+          <button
+            className={`fixed text-2xl text-cyan-500 px-4 bg-gray-100 py-4 shadow-md rounded-full hover:bg-gray-300 hover:text-cyan-600  duration-300 transition-all ease-in z-50 ${
+              open ? " hidden" : " right-5 bottom-5 opacity-100"
+            }`}
+          >
+            <FaPlus />
+          </button>
+        </Link>
+      ) : (
+        ""
+      )}
     </>
   );
 };
