@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
 import { setSearchTerm } from "../redux/services/contactSlice";
 import Cookies from "js-cookie";
+import { BsFillSendPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [searchOnclick, setSearchOnClick] = useState(false);
@@ -17,15 +19,17 @@ const Navbar = () => {
   // console.log(user)
   return (
     <>
-      <div className=" bg-gray-50 flex justify-between gap-5 items-center px-2 sm:px-5 border h-20">
+      <div className=" fixed z-50 w-screen bg-gray-50 flex justify-between gap-5 items-center px-2 sm:px-5 border h-20">
         <div
           className={` absolute transition-all z-auto duration-300 ease-in ${
             searchOnclick
               ? "top-4 left-4 opacity-100 sm:hidden "
               : "top-[-100px] left-4 opacity-0"
-          }`}>
+          }`}
+        >
           <div
-            className={` max-[500px]:w-[270px] max-[460px]:w-[200px] w-[300px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}>
+            className={` max-[500px]:w-[270px] max-[460px]:w-[200px] w-[300px] h-[50px] flex gap-3 border items-center rounded-lg bg-gray-100`}
+          >
             <AiOutlineSearch className=" text-gray-600 text-[25px] ml-3"></AiOutlineSearch>
             <input
               onChange={(e) => dispatch(setSearchTerm(e.target.value))}
@@ -45,7 +49,8 @@ const Navbar = () => {
         <div
           className={`flex ${
             searchOnclick ? "hidden sm:flex" : "block"
-          }  flex items-center sm:gap-4 gap-2 max-[400px]:w-[150px]`}>
+          }  flex items-center sm:gap-4 gap-2 max-[400px]:w-[150px]`}
+        >
           <div className=" hover:bg-gray-200 rounded-full p-2 duration-500">
             {open ? (
               <RxCross1
@@ -97,7 +102,8 @@ const Navbar = () => {
               onClick={() => setSearchOnClick(true)}
               className={` ${
                 searchOnclick ? "hidden" : "block"
-              } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}></AiOutlineSearch>
+              } sm:hidden block text-gray-600 cursor-pointer text-[25px] ml-3`}
+            ></AiOutlineSearch>
             {/* )} */}
             <div className="max-[400px]:hidden hover:bg-gray-200 rounded-full p-2 duration-500">
               <AiOutlineQuestionCircle className=" text-[20px] cursor-pointer text-gray-600"></AiOutlineQuestionCircle>
@@ -113,7 +119,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Sidebar open={open} />
+      <Sidebar open={open} setOpen={setOpen} />
+      <Link to={'/createContact'}> 
+        <button
+          className={`fixed text-2xl text-cyan-500 px-4 bg-gray-100 py-4 shadow-md rounded-full hover:bg-gray-200 hover:text-cyan-600 duration-500 transition-all ease-in z-50 ${
+            open
+              ? " right-[-50px] bottom-5 opacity-0"
+              : " right-5 bottom-5 opacity-100"
+          }`}
+        >
+          <BsFillSendPlusFill />
+        </button>
+      </Link>
     </>
   );
 };

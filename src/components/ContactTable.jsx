@@ -13,6 +13,7 @@ import { addContact, addStarredContacts, removeStarredContacts } from "../redux/
 import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa";
 
 const ContactTable = () => {
   const [isHovered, setIsHovered] = useState(null);
@@ -25,7 +26,7 @@ const ContactTable = () => {
   const navigate = useNavigate();
   const starContacts = useSelector((state) => state.contactSlice.starredContacts);
   // const starFilter = starContacts?.filter(contact => contact )
-  console.log(starFilter);
+  // console.log(starFilter);
 
   const [starredRows, setStarredRows] = useState([]);
 
@@ -88,13 +89,15 @@ const ContactTable = () => {
         <button
           type="button"
           className=" bg-blue-400 px-4 py-1 rounded shadow-md flex items-center gap-2 text-white font-bold text-xl tracking-wider"
-          disabled>
+          disabled
+        >
           <svg
             aria-hidden="true"
             className="w-6 h-6 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
             viewBox="0 0 100 101"
             fillOpacity="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
               fillOpacity="currentColor"
@@ -110,8 +113,26 @@ const ContactTable = () => {
     );
   }
 
+  if (contacts?.length === 0) {
+    return (
+      <div className="pt-20 flex flex-col gap-3 justify-center items-center h-screen">
+        <img
+          src="https://i.pinimg.com/564x/be/11/72/be1172fdef15e6561848c206cf1a83f5.jpg"
+          className="w-[200px] h-[200px]"
+        />
+        <p className=" font-medium text-lg">No contacts yet</p>
+        <Link to={'/createContact'}>
+          <div className=" flex justify-center items-center gap-3 px-5 py-1 bg-sky-50 duration-500 rounded text-sky-400 hover:bg-sky-100 hover:text-sky-500">
+            <FaRegUser />
+            <p className=" font-medium">Create Contact</p>
+          </div>
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <div className=" bg-blue-100">
+    <div className=" pt-20 bg-blue-100">
       <div className=" relative z-10 overflow-hidden ">
         <table className=" w-full">
           <thead className=" border-b-2 border-b-white text-left">
@@ -171,7 +192,8 @@ const ContactTable = () => {
                     }  hover:backdrop:blur-sm duration-500`}
                     onDoubleClick={() => toDetail(contact?.id)}
                     onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}>
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[420px]:px-5">
                       <div className="flex flex-row items-center">
                         <img
@@ -227,7 +249,8 @@ const ContactTable = () => {
                       </Link>
                       <p
                         className=""
-                        onClick={() => deleteHandler(contact?.id)}>
+                        onClick={() => deleteHandler(contact?.id)}
+                      >
                         <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
                       </p>
                     </td>
@@ -241,11 +264,13 @@ const ContactTable = () => {
       <svg
         className="  fixed left-0 bottom-0"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320">
+        viewBox="0 0 1440 320"
+      >
         <path
           fill="#a2d9ff"
           fillOpacity="1"
-          d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,181.3C336,149,384,107,432,128C480,149,528,235,576,245.3C624,256,672,192,720,170.7C768,149,816,171,864,197.3C912,224,960,256,1008,250.7C1056,245,1104,203,1152,186.7C1200,171,1248,181,1296,202.7C1344,224,1392,256,1416,272L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
+          d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,181.3C336,149,384,107,432,128C480,149,528,235,576,245.3C624,256,672,192,720,170.7C768,149,816,171,864,197.3C912,224,960,256,1008,250.7C1056,245,1104,203,1152,186.7C1200,171,1248,181,1296,202.7C1344,224,1392,256,1416,272L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
+        ></path>
       </svg>
     </div>
   );
