@@ -31,7 +31,8 @@ const ContactTable = () => {
   const starContacts = useSelector(
     (state) => state.contactSlice.starredContacts
   );
-  console.log(starContacts);
+  // const starContacts = JSON.parse(Cookies.get("star"));
+  // console.log(starContacts);
 
   const [starredRows, setStarredRows] = useState([]);
 
@@ -169,14 +170,14 @@ const ContactTable = () => {
           <tbody className=" z-10">
             {starContacts?.length > 0 ? (
               <tr>
-                <td className="px-10 py-4 whitespace-nowrap max-[420px]:px-5">
-                  <p className=" text-blue-600 font-bold">
-                    STARRED CONTACTS ({starContacts?.length})
+                <td className="px-10 pt-4 whitespace-nowrap max-[420px]:px-5">
+                  <p className=" text-gray-600 font-medium">
+                    Starred Contacts ({starContacts?.length})
                   </p>
                 </td>
               </tr>
             ) : null}
-            {starContacts?.map((starContact,index) => {
+            {/* {starContacts?.map((starContact,index) => {
               return (
                 <>
                   <tr
@@ -242,19 +243,19 @@ const ContactTable = () => {
                           <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
                         </p>
                       </Link>
-                      {/* <p
+                      <p
                         className=""
                         onClick={() => {
                           deleteHandler(starContact?.id);
                         }}
                       >
                         <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
-                      </p> */}
+                      </p>
                     </td>
                   </tr>
                 </>
               );
-            })}
+            })} */}
 
             <tr>
               <td className="px-10 py-4 whitespace-nowrap max-[420px]:px-5">
@@ -314,7 +315,7 @@ const ContactTable = () => {
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-7 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}
+                      }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}
                     >
                       <p>
                         {starredRows.includes(index) ? (

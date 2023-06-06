@@ -26,6 +26,7 @@ export const contactSlice = createSlice({
     addStarredContacts: (state,{payload}) => {
       // state.starredContacts = payload;
       state.starredContacts = [...state.starredContacts,{...payload}]
+      // Cookies.set("star",JSON.stringify(state.starredContacts));
             
     },
     removeStarredContacts: (state,{payload}) => {
