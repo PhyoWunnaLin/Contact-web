@@ -30,9 +30,9 @@ const EditInfo = () => {
   const { id } = useParams();
 
   const token = Cookies.get("token");
-  const { data, isLoading } = useGetUserInfoQuery({ id, token });
+  const { data } = useGetUserInfoQuery({ id, token });
   const user = data?.contact;
-  const [updateUser] = useUpdateUserMutation();
+  const [updateUser ,{isLoading}] = useUpdateUserMutation();
   const dispatch = useDispatch();
   const [updateName, setupdateName] = useState("");
   const [updateEmail, setupdateEmail] = useState("");
@@ -48,6 +48,17 @@ const EditInfo = () => {
     setUpdateAddress(user?.address);
     setUpdatePhone(user?.phone);
   }, [user]);
+
+  if (isLoading) {
+    toast("working...", {
+      style: {
+        border: "1px solid #000",
+        padding: "5px 20px",
+        color: "#fff",
+        backgroundColor: "#000000ff",
+      },
+    });
+  }
 
   const updatehandler = async (e) => {
     e.preventDefault();
