@@ -27,6 +27,7 @@ const ContactTable = () => {
   const starContacts = useSelector((state) => state.contactSlice.starredContacts);
   // const starFilter = starContacts?.filter(contact => contact )
   // console.log(starFilter);
+  // console.log(starContacts);
 
   const [starredRows, setStarredRows] = useState([]);
 
@@ -223,16 +224,16 @@ const ContactTable = () => {
                       className={` ${
                         isHovered === index ? "block" : "invisible"
                       }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}>
-                      <p onClick={()=>toggleStar(index,contact)}>
+                      <p>
                       {starredRows.includes(index) ? (
                       <AiFillStar
                         className={`cursor-pointer text-blue-600`}
-                        onClick={() => toggleStar(index)}
+                        onClick={() => toggleStar(index,contact)}
                       />
                     ) : (
                       <AiOutlineStar
                         className={`cursor-pointer hover:text-gray-800`}
-                        onClick={() => toggleStar(index)}
+                        onClick={() => toggleStar(index,contact)}
                       />
                     )}
                       </p>
