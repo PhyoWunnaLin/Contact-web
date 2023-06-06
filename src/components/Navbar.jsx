@@ -125,7 +125,7 @@ const Navbar = () => {
       {contacts?.length > 0 ? (
         <Link to={"/createContact"}>
           <button
-            className={`fixed text-2xl text-cyan-500 px-4 bg-gray-100 py-4 shadow-md rounded-full hover:bg-gray-300 hover:text-cyan-600  duration-300 transition-all ease-in z-50 ${
+            className={`fixed text-2xl text-gray-50 px-4 bg-blue-500 py-4 shadow-md rounded-full hover:bg-blue-600  duration-300 transition-all ease-in z-50 ${
               open ? " right-[-70px] bottom-5 opacity-0" : " right-5 bottom-5 opacity-100"
             }`}
           >
