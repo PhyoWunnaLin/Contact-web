@@ -25,8 +25,7 @@ const ContactTable = () => {
   const [DeleteContact] = useDeleteContactMutation();
   const navigate = useNavigate();
   const starContacts = useSelector((state) => state.contactSlice.starredContacts);
-  // const starFilter = starContacts?.filter(contact => contact )
-  console.log(starContacts);
+  // console.log(starContacts);
 
   const [starredRows, setStarredRows] = useState([]);
 
@@ -107,12 +106,12 @@ const ContactTable = () => {
     return (
       <div className="pt-20 flex flex-col gap-3 justify-center items-center h-screen">
         <img
-          src="https://i.pinimg.com/564x/be/11/72/be1172fdef15e6561848c206cf1a83f5.jpg"
-          className="w-[200px] h-[200px]"
+          src="https://i.pinimg.com/564x/7d/97/ae/7d97aeef0d9384c494a755a5d0fa8a43.jpg"
+          className="w-[250px] h-[200px]"
         />
         <p className=" font-medium text-lg">No contacts yet</p>
         <Link to={'/createContact'}>
-          <div className=" flex justify-center items-center gap-3 px-5 py-1 bg-sky-50 duration-500 rounded text-sky-400 hover:bg-sky-100 hover:text-sky-500">
+          <div className=" flex justify-center items-center gap-3 px-5 py-1 bg-sky-100 duration-500 rounded text-sky-500 hover:bg-sky-200 hover:text-sky-600">
             <FaRegUser />
             <p className=" font-medium">Create Contact</p>
           </div>
@@ -154,90 +153,6 @@ const ContactTable = () => {
             </tr>
           </thead>
           <tbody className=" z-10">
-            {/* {starContacts.map((contact, index) => {
-              <div>
-                <tr>
-                  <td className="px-10 py-4 whitespace-nowrap max-[420px]:px-5">
-                    <p className=" text-blue-600 font-bold">
-                    STARRED CONTACTS({contact?.length})
-                    </p>
-                  </td>
-                </tr>
-                <tr
-                    key={contact.id}
-                    className={` border-b-2 border-b-white cursor-pointer ${
-                      isHovered === index ? "bg-[#90cdf49f]" : ""
-                    }  hover:backdrop:blur-sm duration-500`}
-                    onDoubleClick={() => toDetail(contact?.id)}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <td className=" text-left px-10 py-4 text-sm font-semibold lg:tracking-wide max-[420px]:px-5">
-                      <div className="flex flex-row items-center">
-                        <img
-                          src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
-                          className=" md:w-[45px] md:h-[45px] w-[40px] h-[40px] rounded-full"
-                          alt=""
-                        />
-                        <span className=" text-gray-600 text-sm lg:text-base pl-2 select-none">
-                          {contact.name}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="  text-left lg:px-10 md:px-10 px-5 max-md:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
-                      <span className=" text-gray-600 text-sm lg:text-base">
-                        {contact.email}
-                      </span>
-                    </td>
-                    <td className=" text-left lg:px-10 md:px-10 px-5 max-lg:hidden py-4  text-sm font-semibold lg:tracking-wide select-none">
-                      <span className=" text-gray-600 text-sm lg:text-base">
-                        {contact.phone}
-                      </span>
-                    </td>
-                    <td className=" text-left max-xl:hidden lg:px-10 md:px-10 px-5 py-4  text-sm font-semibold lg:tracking-wide select-none">
-                      <span className=" text-gray-600">{contact.address}</span>
-                    </td>
-                    <td
-                      className={` ${
-                        isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}>
-                      <p onClick={()=>toggleStar(index,contact)}>
-                      {starredRows.includes(index) ? (
-                      <AiFillStar
-                        className={`cursor-pointer text-blue-600`}
-                        onClick={() => toggleStar(index)}
-                      />
-                    ) : (
-                      <AiOutlineStar
-                        className={`cursor-pointer hover:text-gray-800`}
-                        onClick={() => toggleStar(index)}
-                      />
-                    )}
-                      </p>
-                    
-                      <Link to={`/editInfo/${contact.id}`}>
-                        <p>
-                          <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
-                        </p>
-                      </Link>
-                      <Link to={`/info/${contact.id}`}>
-                        <p>
-                          <BsInfoCircle className=" hover:text-gray-800"></BsInfoCircle>
-                        </p>
-                      </Link>
-                      <p
-                        className=""
-                        onClick={() => deleteHandler(contact?.id)}
-                      >
-                        <BsFillTrashFill className=" text-red-600 cursor-pointer hover:text-red-500" />
-                      </p>
-                    </td>
-                  </tr>
-              </div>
-            })} */}
-
-
-
             <tr>
               <td className="px-10 py-4 whitespace-nowrap max-[420px]:px-5">
                 <p className=" text-blue-600 font-bold">
@@ -297,16 +212,16 @@ const ContactTable = () => {
                       className={` ${
                         isHovered === index ? "block" : "invisible"
                       }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}>
-                      <p onClick={()=>toggleStar(index,contact)}>
+                      <p>
                       {starredRows.includes(index) ? (
                       <AiFillStar
                         className={`cursor-pointer text-blue-600`}
-                        onClick={() => toggleStar(index)}
+                        onClick={() => toggleStar(index,contact)}
                       />
                     ) : (
                       <AiOutlineStar
                         className={`cursor-pointer hover:text-gray-800`}
-                        onClick={() => toggleStar(index)}
+                        onClick={() => toggleStar(index,contact)}
                       />
                     )}
                       </p>

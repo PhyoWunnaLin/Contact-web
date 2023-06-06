@@ -30,7 +30,7 @@ const EditInfo = () => {
   const token = Cookies.get("token");
   const { data } = useGetUserInfoQuery({ id, token });
   const user = data?.contact;
-  const [updateUser ,{isLoading}] = useUpdateUserMutation();
+  const [updateUser, { isLoading }] = useUpdateUserMutation();
   const dispatch = useDispatch();
   const [updateName, setupdateName] = useState("");
   const [updateEmail, setupdateEmail] = useState("");
@@ -167,7 +167,7 @@ const EditInfo = () => {
                   </div>
                 </div>
               </div>
-              <div className=" bg-[#a2d2ff] mx-auto md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-[63%] py-14 flex flex-col   w-full ">
+              <div className=" bg-[#a2d2ff] mx-auto md:bg-[#bde0fe] lg:bg-[#a2d2ff] relative md:w-4/6 shadow lg:w-[55%] py-14 flex flex-col   w-full ">
                 <form
                   onSubmit={updatehandler}
                   id="update"

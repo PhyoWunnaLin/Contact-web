@@ -3,7 +3,6 @@ import React from "react";
 import ContactForm from "./CreateContentComponent/ContactForm";
 import bell from "../assets/bells.svg";
 import people from "../assets/publicdomainq-buesinesspeople.svg";
-import { useLocation } from "react-router-dom";
 
 const CreateContact = () => {
   return (
