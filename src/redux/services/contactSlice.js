@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from 'js-cookie'
 
 const initialState = {
   contact: [],
@@ -23,11 +24,16 @@ export const contactSlice = createSlice({
     },
 
     addStarredContacts: (state,{payload}) => {
-      state.starredContacts = payload;
+      // state.starredContacts = payload;
+      state.starredContacts = [...state.starredContacts,{...payload}]
+            
+    },
+    removeStarredContacts: (state,{payload}) => {
+      state.starredContacts = state.starredContacts?.filter(contact => contact.id !== payload.id);
     }
   
   },
 });
 
-export const { addContact, setSearchTerm, setimages, addStarredContacts } = contactSlice.actions;
+export const { addContact, setSearchTerm, setimages, addStarredContacts, removeStarredContacts } = contactSlice.actions;
 export default contactSlice.reducer;

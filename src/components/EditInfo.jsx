@@ -8,7 +8,7 @@ import { SlCalender } from "react-icons/sl";
 import { SlNote } from "react-icons/sl";
 import ModalContents from "./CreateContentComponent/ModalContents";
 import { Link, useNavigate, useParams } from "react-router-dom";
-// import { Toaster, toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import bell from "../assets/bells.svg";
 import people from "../assets/publicdomainq-buesinesspeople.svg";
@@ -30,7 +30,7 @@ const EditInfo = () => {
   const token = Cookies.get("token");
   const { data } = useGetUserInfoQuery({ id, token });
   const user = data?.contact;
-  const [updateUser, isLoading] = useUpdateUserMutation();
+  const [updateUser ,{isLoading}] = useUpdateUserMutation();
   const dispatch = useDispatch();
   const [updateName, setupdateName] = useState("");
   const [updateEmail, setupdateEmail] = useState("");
@@ -46,6 +46,17 @@ const EditInfo = () => {
     setUpdateAddress(user?.address);
     setUpdatePhone(user?.phone);
   }, [user]);
+
+  if (isLoading) {
+    toast("working...", {
+      style: {
+        border: "1px solid #000",
+        padding: "5px 20px",
+        color: "#fff",
+        backgroundColor: "#000000ff",
+      },
+    });
+  }
 
   const updatehandler = async (e) => {
     e.preventDefault();
@@ -80,21 +91,9 @@ const EditInfo = () => {
   };
   // console.log(errormessage);
 
-  // if (isLoading) {
-  //   toast("working...", {
-  //     style: {
-  //       border: "1px solid #000",
-  //       padding: "5px 20px",
-  //       color: "#fff",
-  //       backgroundColor: "#000000ff",
-  //     },
-  //   });
-  // }
-
   if (user) {
     return (
       <>
-      {/* <Toaster position="top-center" reverseOrder={false} /> */}
         <div className=" bg-[#a2d2ff] h-screen">
           <div className="bg-[#a2d2ff] m-auto  ">
             <img

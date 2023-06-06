@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 import { addUserToCookie } from "../redux/services/authSlice";
 
 const Login = () => {
-  const [email, setEmail] = useState("admin@gmail.com");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("teamC@gmail.com");
+  const [password, setPassword] = useState("teamC1234");
   const nav = useNavigate();
   const [login, { isLoading }] = useLoginMutation();
   const dispatch = useDispatch();

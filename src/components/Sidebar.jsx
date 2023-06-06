@@ -13,6 +13,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { removeUserFromCookie } from "../redux/services/authSlice";
+import { Loader } from '@mantine/core';
 
 const Sidebar = ({ open }) => {
   const [active, setActive] = useState("contacts");
@@ -35,7 +36,8 @@ const Sidebar = ({ open }) => {
       <div
         className={` bg-gray-50 w-64 shadow-lg h-screen flex flex-col gap-5 pt-5 fixed transition-all z-[100] duration-300 ease-in ${
           open ? " left-0 opacity-100" : "left-[-150px] opacity-0"
-        }`}>
+        }`}
+      >
         <div className="flex items-center gap-3">
           <p>
             <BsFillSendPlusFill className="ml-2 text-2xl text-cyan-500" />
@@ -54,7 +56,8 @@ const Sidebar = ({ open }) => {
             }}
             className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
               active == "contacts" ? " text-sky-700 text-base bg-blue-200" : ""
-            }`}>
+            }`}
+          >
             <TiUser className=" mr-4" />
             Contact
           </p>
@@ -64,7 +67,8 @@ const Sidebar = ({ open }) => {
               active == "frequent"
                 ? " text-sky-700 text-[16px] bg-blue-200"
                 : ""
-            }`}>
+            }`}
+          >
             <TbClockPause className=" mr-4" />
             Frequent
           </p>
@@ -74,7 +78,8 @@ const Sidebar = ({ open }) => {
               active == "otherContacts"
                 ? " text-sky-700 text-[16px] bg-blue-200"
                 : ""
-            }`}>
+            }`}
+          >
             <BsFillInboxesFill className=" mr-4" />
             Other contacts
           </p>
@@ -88,7 +93,8 @@ const Sidebar = ({ open }) => {
               onClick={() => setActive("fix")}
               className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
                 active == "fix" ? " text-sky-700 text-[16px] bg-blue-200" : ""
-              }`}>
+              }`}
+            >
               <SlMagicWand className=" mr-4" />
               Merge & fix
             </p>
@@ -96,7 +102,8 @@ const Sidebar = ({ open }) => {
               onClick={() => setActive("trash")}
               className={` hover:bg-blue-100 duration-200 flex text-[14px] cursor-pointer items-center pl-8 p-2 rounded-r-3xl  ${
                 active == "trash" ? " text-sky-700 text-[16px] bg-blue-200" : ""
-              }`}>
+              }`}
+            >
               <IoMdTrash className=" mr-4" />
               Trash
             </p>
@@ -105,9 +112,19 @@ const Sidebar = ({ open }) => {
             <button
               disabled={isLoading && true}
               onClick={logoutHandler}
-              className="flex items-center shadow hover:shadow-md bg-white hover:bg-red-50 hover:text-red-500  duration-500  text-gray-700 px-5 py-1 rounded-3xl border">
-              <MdOutlineLogout className=" mr-4" />
-              Log Out
+              className="flex items-center shadow hover:shadow-md bg-white hover:bg-red-50 hover:text-red-500  duration-500  text-gray-700 px-5 py-1 rounded-3xl border"
+            >
+              {isLoading ? (
+                <div className="flex items-center gap-2">
+                  <Loader color="red" size="sm" />
+                  <p>Loading...</p>
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <MdOutlineLogout className=" mr-4" />
+                  <p>Log Out</p>
+                </div>
+              )}
             </button>
           </div>
         </div>
