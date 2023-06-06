@@ -12,9 +12,6 @@ import { Toaster, toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import bell from "../assets/bells.svg";
 import people from "../assets/publicdomainq-buesinesspeople.svg";
-import NameInput from "./CreateContentComponent/ContactFormComponents/NameInput";
-import EmailPhoneAddress from "./CreateContentComponent/ContactFormComponents/EmailPhoneAddress";
-import OtherContact from "./CreateContentComponent/ContactFormComponents/OtherContact";
 import { setimages } from "../redux/services/contactSlice";
 import Cookies from "js-cookie";
 import { BsPeople } from "react-icons/bs";
@@ -24,6 +21,7 @@ import {
   useGetUserInfoQuery,
   useUpdateUserMutation,
 } from "../redux/api/contactApi";
+
 const EditInfo = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const image = useSelector((state) => state.contactSlice.images);
@@ -92,6 +90,7 @@ const EditInfo = () => {
     }
   };
   // console.log(errormessage);
+
   if (user) {
     return (
       <>

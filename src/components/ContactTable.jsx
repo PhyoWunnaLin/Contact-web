@@ -1,5 +1,5 @@
 import { HiPrinter } from "react-icons/hi";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiImport, CiExport } from "react-icons/ci";
 import Cookies from "js-cookie";
@@ -9,7 +9,7 @@ import {
 } from "../redux/api/contactApi";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../redux/services/contactSlice";
+import { addContact, addStarredContacts, removeStarredContacts } from "../redux/services/contactSlice";
 import { BsFillTrashFill, BsInfoCircle } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
@@ -24,7 +24,21 @@ const ContactTable = () => {
   const searchTerm = useSelector((state) => state.contactSlice.searchTerm);
   const [DeleteContact] = useDeleteContactMutation();
   const navigate = useNavigate();
+  const starContacts = useSelector((state) => state.contactSlice.starredContacts);
+  // const starFilter = starContacts?.filter(contact => contact )
+  // console.log(starFilter);
 
+  const [starredRows, setStarredRows] = useState([]);
+
+  const toggleStar = (index,contact) => {
+    if (starredRows.includes(index)) {
+      setStarredRows(starredRows.filter((rowIndex) => rowIndex !== index));
+      dispatch(removeStarredContacts({id:contact?.id}))
+    } else {
+      setStarredRows([...starredRows, index]);
+      dispatch(addStarredContacts(contact))
+    }
+  };
   const deleteHandler = async (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +59,17 @@ const ContactTable = () => {
   const toDetail = (id) => {
     navigate(`/info/${id}`);
   };
+
+  // const starHandler = (contact,index) => {
+  //   setIsHovered(index);
+  //   if (isHovered === index) {
+  //     setStar(!star);
+  //   } else {
+  //     setStar(!star);
+  //   }
+  // }
+
+
 
   useEffect(() => {
     dispatch(addContact(data?.contacts?.data));
@@ -197,11 +222,21 @@ const ContactTable = () => {
                     <td
                       className={` ${
                         isHovered === index ? "block" : "invisible"
-                      }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}
-                    >
-                      <p>
-                        <AiOutlineStar className=" cursor-pointer hover:text-gray-800"></AiOutlineStar>
+                      }  group text-gray-600 text-left px-10 py-10 flex flex-row justify-end items-center text-xl gap-3 max-[380px]:px-5`}>
+                      <p onClick={()=>toggleStar(index,contact)}>
+                      {starredRows.includes(index) ? (
+                      <AiFillStar
+                        className={`cursor-pointer text-blue-600`}
+                        onClick={() => toggleStar(index)}
+                      />
+                    ) : (
+                      <AiOutlineStar
+                        className={`cursor-pointer hover:text-gray-800`}
+                        onClick={() => toggleStar(index)}
+                      />
+                    )}
                       </p>
+                    
                       <Link to={`/editInfo/${contact.id}`}>
                         <p>
                           <MdOutlineEdit className=" cursor-pointer hover:text-gray-800"></MdOutlineEdit>
