@@ -115,16 +115,11 @@ const Sidebar = ({ open }) => {
               className="flex items-center shadow hover:shadow-md bg-white hover:bg-red-50 hover:text-red-500  duration-500  text-gray-700 px-5 py-1 rounded-3xl border"
             >
               {isLoading ? (
-                <div className="flex items-center gap-2">
-                  <Loader color="red" size="sm" />
-                  <p>Loading...</p>
-                </div>
+                  <Loader color="red" size="xs" className="mr-4"/>
               ) : (
-                <div className="flex items-center">
                   <MdOutlineLogout className=" mr-4" />
-                  <p>Log Out</p>
-                </div>
               )}
+              Log Out
             </button>
           </div>
         </div>
